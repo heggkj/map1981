@@ -1,0 +1,122 @@
+# Harrisonburg/JMU 1981 Map Explorer
+
+Single-page local prototype for the edited 1981 Harrisonburg/JMU illustrated map.
+
+## Local Preview
+
+Run a local static server from this folder:
+
+```powershell
+python -m http.server 5173
+```
+
+Then open:
+
+```text
+http://localhost:5173/
+```
+
+The app loads `harisonburg-map/harrisonburg_1981_overlay-edited.svg`, `harrisonburg_1981_hotspots.json`, and the regenerated tiles in `tiles-edited/`.
+
+## Regenerating Map Data
+
+If polygon geometry or titles change in the SVG:
+
+```powershell
+python scripts/normalize_svg_hotspots.py
+python scripts/generate_map_assets.py
+```
+
+`normalize_svg_hotspots.py` keeps SVG path IDs, `data-id`, labels, and titles aligned. `generate_map_assets.py` writes:
+
+- `harrisonburg_1981_hotspots.json`
+- `harrisonburg_1981_hotspots.csv`
+- `tiles-edited/*.webp`
+
+## Comments & Memories Moderation
+
+The browser posts comments and memories to `/.netlify/functions/comment`. Locally, if that function is not running, clean submissions are saved in browser local storage for testing. In production, Netlify Functions proxy both comment submission and public sheet reads so Google secrets never appear in the browser.
+
+For production on Netlify, add environment variables:
+
+```text
+GOOGLE_SHEET_WEBHOOK_URL=your_private_google_apps_script_web_app_url
+GOOGLE_SHEET_WEBHOOK_SECRET=your_long_random_shared_secret
+```
+
+The Netlify Function screens profanity before sending a submission to the moderation queue. Submissions that fail the language screen are rejected before they reach the sheet. The visitor-facing app reads approved comments and editable tile copy from `/.netlify/functions/sheet-data`, which calls the same Google Apps Script web app.
+
+Do not share a Gmail password for this. Use a Google Apps Script web app deployed from the sheet:
+
+1. Open the Google Sheet.
+2. Go to **Extensions > Apps Script**.
+3. Paste in `google-apps-script/map1981-sheets-webapp.gs`.
+4. In `setMap1981Secret()`, replace `replace-this-with-a-long-random-secret` with the same secret you will put in Netlify.
+5. Run `setMap1981Secret()`, then run `setupMap1981Sheets()`.
+6. Deploy as a Web App, executing as you, with access set to anyone with the link.
+7. Copy the `/exec` Web App URL into `GOOGLE_SHEET_WEBHOOK_URL`.
+
+## Google Sheet Format
+
+Use a tab named `Comments` with these columns in row 1:
+
+```text
+submitted_at
+moderation_status
+profanity_screen
+hotspot_id
+hotspot_title
+commenter_name
+comment
+word_count
+page_url
+user_agent
+moderator_notes
+approved_at
+approved_by
+public_comment_id
+```
+
+Use `moderation_status` values like `pending`, `approved`, `rejected`, or `needs_followup`.
+
+Use a tab named `TileData` with these columns in row 1:
+
+```text
+hotspot_id
+title
+caption
+description
+thumbnail
+tile_path
+thumbnail_url
+status
+needs_review
+challenge_prompt
+center_x
+center_y
+```
+
+The app uses `hotspot_id` to match rows to polygons. Edit `title`, `description`, and optional `challenge_prompt` in the sheet. Keep `tile_path` as the local tile path unless you later provide a public `thumbnail_url`. The `thumbnail` column is a formula column that displays the image from `thumbnail_url` once the tiles are hosted at a public URL. Use `status=hidden` if a polygon should not be selectable.
+
+After deployment, fill `thumbnail_url` from `tile_path`, for example by putting this in `G2` and filling down:
+
+```text
+=IF(LEN(F2),"https://your-site-name.netlify.app/"&F2,"")
+```
+
+Approved comments and memories can still be tested without Netlify by copying public submissions into `comments-approved.json` using this shape:
+
+```json
+[
+  {
+    "hotspot_id": "welcome-to-harrisonburg-sign",
+    "status": "approved",
+    "name": "Visitor name",
+    "comment": "Helpful correction or memory."
+  }
+]
+```
+
+## Notes
+
+The working folder is named `harisonburg-map` on disk. The app follows that existing spelling so paths resolve locally.

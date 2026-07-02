@@ -1,0 +1,393 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg"
+     viewBox="0 0 2047 1726"
+     preserveAspectRatio="xMidYMid meet"
+     role="img"
+     aria-label="Clickable hotspot overlay for the 1981 James Madison University and Harrisonburg illustration">
+  <metadata>
+    Draft transparent SVG overlay generated from the chat image copy: 2047 × 1726.
+    Paths are clipped so displayed hit regions do not overlap. Use data-id to join each hotspot to JSON, CSV, or Google Sheets rows.
+    Stroke color can be changed with CSS variable --hotspot-stroke.
+  </metadata>
+  <defs>
+    <style><![CDATA[
+      :root { --hotspot-stroke: #ffcc00; --hotspot-fill: #ffcc00; }
+      .hotspot {
+        fill: var(--hotspot-fill);
+        fill-opacity: 0;
+        stroke: var(--hotspot-stroke);
+        stroke-width: 4;
+        stroke-opacity: 0;
+        vector-effect: non-scaling-stroke;
+        pointer-events: all;
+        cursor: pointer;
+      }
+      .hotspot:hover,
+      .hotspot:focus,
+      .hotspot.is-active,
+      .hotspot[aria-selected="true"] {
+        fill-opacity: 0.16;
+        stroke-opacity: 1;
+        outline: none;
+      }
+    ]]></style>
+  </defs>
+  <g id="hotspots">
+    <path id="hotspot-lincoln-homestead-sign" class="hotspot" tabindex="0" role="button"
+          data-id="lincoln-homestead-sign" data-title="Lincoln Homestead sign"
+          data-crop="80,168,220,180" data-center="190.0,257.5"
+          d="M 158 283 L 222 283 L 222 232 L 158 232 Z"><title>Lincoln Homestead sign</title></path>
+    <path id="hotspot-horse-drawn-wagon" class="hotspot" tabindex="0" role="button"
+          data-id="horse-drawn-wagon" data-title="Horse-drawn wagon"
+          data-crop="85,225,292,193" data-center="231.7,322.7"
+          d="M 140 339 L 225 363 L 320 362 L 322 309 L 238 280 L 222 280.52 L 222 283 L 158 283 L 158 282.58 L 145 283 Z"><title>Horse-drawn wagon</title></path>
+    <path id="hotspot-red-barn-hillside" class="hotspot" tabindex="0" role="button"
+          data-id="red-barn-hillside" data-title="Red barn on hillside"
+          data-crop="275,148,248,180" data-center="395.8,239.2"
+          d="M 335 263 L 468 256 L 450 212 L 330 226 Z"><title>Red barn on hillside</title></path>
+    <path id="hotspot-fishing-boat-quote" class="hotspot" tabindex="0" role="button"
+          data-id="fishing-boat-quote" data-title="Boat with “I don’t believe it!” gag"
+          data-crop="520,107,220,183" data-center="624.8,200.8"
+          d="M 585 205 L 606 235 L 676 228 L 672 174 L 585 162 Z"><title>Boat with “I don’t believe it!” gag</title></path>
+    <path id="hotspot-diving-pool" class="hotspot" tabindex="0" role="button"
+          data-id="diving-pool" data-title="Diving pool and board"
+          data-crop="455,196,473,213" data-center="696.0,298.9"
+          d="M 510 335 L 675 349 L 866 354 L 870.16 314.82 L 790 307 L 790 274 L 817.69 268.09 L 773 252 L 665 251 L 510 263 Z"><title>Diving pool and board</title></path>
+    <path id="hotspot-canoe-on-water" class="hotspot" tabindex="0" role="button"
+          data-id="canoe-on-water" data-title="Small canoe on water"
+          data-crop="735,195,225,180" data-center="847.2,286.0"
+          d="M 790 307 L 872 315 L 880.2 306.06 L 870 283 L 899.22 273.67 L 879 255 L 790 274 Z"><title>Small canoe on water</title></path>
+    <path id="hotspot-shenandoah-parking-sign" class="hotspot" tabindex="0" role="button"
+          data-id="shenandoah-parking-sign" data-title="Shenandoah Parking sign"
+          data-crop="814,205,220,185" data-center="920.5,296.8"
+          d="M 893 335 L 977 309 L 942 260 L 870 283 Z"><title>Shenandoah Parking sign</title></path>
+    <path id="hotspot-us-route-42-sign" class="hotspot" tabindex="0" role="button"
+          data-id="us-route-42-sign" data-title="U.S. Route 42 marker"
+          data-crop="349,258,220,180" data-center="459.0,347.5"
+          d="M 444 369 L 474 371 L 475 326 L 443 324 Z"><title>U.S. Route 42 marker</title></path>
+    <path id="hotspot-chicken-country-sign" class="hotspot" tabindex="0" role="button"
+          data-id="chicken-country-sign" data-title="Chicken Country sign"
+          data-crop="1037,146,270,196" data-center="1169.8,245.5"
+          d="M 1100 287 L 1232.09 284.39 L 1240.11 232.26 L 1235 210 L 1092 201 Z"><title>Chicken Country sign</title></path>
+    <path id="hotspot-poultry-festival-animals" class="hotspot" tabindex="0" role="button"
+          data-id="poultry-festival-animals" data-title="Poultry Festival animals"
+          data-crop="861,166,265,209" data-center="985.6,272.2"
+          d="M 918.56 267.49 L 942 260 L 977 309 L 950.91 317.07 L 954 320 L 1071 310 L 1062 221 L 925 226 Z"><title>Poultry Festival animals</title></path>
+    <path id="hotspot-udderly-impossible-cow" class="hotspot" tabindex="0" role="button"
+          data-id="udderly-impossible-cow" data-title="“This is udderly impossible” cow"
+          data-crop="1177,163,250,216" data-center="1297.0,268.2"
+          d="M 1232 285 L 1295 324 L 1301.85 321.33 L 1306 284 L 1367.28 281.18 L 1344 218 L 1242 220 Z"><title>“This is udderly impossible” cow</title></path>
+    <path id="hotspot-top-horse-buggy" class="hotspot" tabindex="0" role="button"
+          data-id="top-horse-buggy" data-title="Horse and buggy near village"
+          data-crop="1246,222,304,185" data-center="1390.0,313.6"
+          d="M 1301 329 L 1390 352 L 1495 326 L 1458 277 L 1306 284 Z"><title>Horse and buggy near village</title></path>
+    <path id="hotspot-court-square-village-sign" class="hotspot" tabindex="0" role="button"
+          data-id="court-square-village-sign" data-title="Court Square Village storefront sign"
+          data-crop="993,282,440,259" data-center="1213.0,411.5"
+          d="M 1378 486 L 1378 371.95 L 1375 355 L 1378 354.43 L 1378 348.9 L 1331.96 337 L 1210.63 337 L 1220 486 Z M 1048 486 L 1158 486 L 1164.4 337 L 1048 337 Z"><title>Court Square Village storefront sign</title></path>
+    <path id="hotspot-village-clock-tower" class="hotspot" tabindex="0" role="button"
+          data-id="village-clock-tower" data-title="Village clock tower"
+          data-crop="1079,268,220,273" data-center="1188.2,405.5"
+          d="M 1158 486 L 1220 486 L 1210 327 L 1165 323 Z"><title>Village clock tower</title></path>
+    <path id="hotspot-eastern-mennonite-college" class="hotspot" tabindex="0" role="button"
+          data-id="eastern-mennonite-college" data-title="Eastern Mennonite College buildings"
+          data-crop="1397,150,458,297" data-center="1620.5,298.2"
+          d="M 1454.99 277.14 L 1458 277 L 1495 326 L 1478.75 330.02 L 1512 386 L 1535.32 386.76 L 1530 346 L 1664.12 341.65 L 1688 308 L 1798.76 307.42 L 1782 205 L 1482 206 Z M 1656.44 390.74 L 1655.28 388.79 L 1623.37 389.65 Z"><title>Eastern Mennonite College buildings</title></path>
+    <path id="hotspot-eastern-mennonite-college-label" class="hotspot" tabindex="0" role="button"
+          data-id="eastern-mennonite-college-label" data-title="Eastern Mennonite College label area"
+          data-crop="1475,276,302,180" data-center="1625.8,366.2"
+          d="M 1536 392 L 1722 387 L 1715 340 L 1530 346 Z"><title>Eastern Mennonite College label area</title></path>
+    <path id="hotspot-hawk-or-eagle-upper-right" class="hotspot" tabindex="0" role="button"
+          data-id="hawk-or-eagle-upper-right" data-title="Large bird above Eastern Mennonite College"
+          data-crop="1589,252,371,258" data-center="1773.5,381.7"
+          d="M 1664.12 341.65 L 1715 340 L 1722 387 L 1655.28 388.79 L 1686 440 L 1838 455 L 1905 410 L 1880 307 L 1688 308 Z"><title>Large bird above Eastern Mennonite College</title></path>
+    <path id="hotspot-blacksmith-or-anvil-gag" class="hotspot" tabindex="0" role="button"
+          data-id="blacksmith-or-anvil-gag" data-title="Village blacksmith / anvil gag"
+          data-crop="1310,287,220,236" data-center="1419.5,404.0"
+          d="M 1395 468 L 1464 451 L 1444 342 L 1375 355 Z"><title>Village blacksmith / anvil gag</title></path>
+    <path id="hotspot-church-complex-right-center" class="hotspot" tabindex="0" role="button"
+          data-id="church-complex-right-center" data-title="Church complex near Court Square"
+          data-crop="1345,333,345,357" data-center="1524.2,514.6"
+          d="M 1400 560 L 1528 635 L 1635 593 L 1628 397 L 1452.63 389.03 L 1464 451 L 1416.99 462.58 Z"><title>Church complex near Court Square</title></path>
+    <path id="hotspot-joseph-neys-building" class="hotspot" tabindex="0" role="button"
+          data-id="joseph-neys-building" data-title="Joseph Neys building"
+          data-crop="1463,431,387,308" data-center="1647.2,596.8"
+          d="M 1608 684 L 1795 681 L 1795 518 L 1631.64 498.99 L 1635 593 L 1538.64 630.82 Z"><title>Joseph Neys building</title></path>
+    <path id="hotspot-harrisonburg-high-school" class="hotspot" tabindex="0" role="button"
+          data-id="harrisonburg-high-school" data-title="Harrisonburg High School"
+          data-crop="281,340,504,259" data-center="532.8,470.8"
+          d="M 730 531 L 722.15 454.73 L 720 505 L 670.28 506.8 L 670 505 L 674.37 532.9 Z M 612.78 399.89 L 617.62 510.55 L 585 514 L 644.09 507.74 L 637 508 L 632.57 398.95 Z M 346.41 517.87 L 350 518 L 350 543.97 L 552 537.07 L 552 402.77 L 336 413 Z"><title>Harrisonburg High School</title></path>
+    <path id="hotspot-high-school-statue" class="hotspot" tabindex="0" role="button"
+          data-id="high-school-statue" data-title="Basketball player statue"
+          data-crop="476,327,220,296" data-center="584.0,474.5"
+          d="M 552 568 L 589.58 566.34 L 585 514 L 617.62 510.55 L 612 382 L 552 383 Z"><title>Basketball player statue</title></path>
+    <path id="hotspot-harrisonburg-oldest-stone-house" class="hotspot" tabindex="0" role="button"
+          data-id="harrisonburg-oldest-stone-house" data-title="“Oldest stone house” gag"
+          data-crop="568,330,220,233" data-center="678.5,446.5"
+          d="M 637 508 L 644.09 507.74 L 670 505 L 670.28 506.8 L 720 505 L 725 388 L 632 385 Z"><title>“Oldest stone house” gag</title></path>
+    <path id="hotspot-bruce-street-house" class="hotspot" tabindex="0" role="button"
+          data-id="bruce-street-house" data-title="c.1750 Bruce Street house"
+          data-crop="697,299,220,261" data-center="806.2,431.0"
+          d="M 752 505 L 862 505 L 858 354 L 753 360 Z"><title>c.1750 Bruce Street house</title></path>
+    <path id="hotspot-saved-by-jmu-character" class="hotspot" tabindex="0" role="button"
+          data-id="saved-by-jmu-character" data-title="“Saved by JMU” character"
+          data-crop="524,450,220,199" data-center="632.5,550.2"
+          d="M 592 594 L 683 588 L 670 505 L 585 514 Z"><title>“Saved by JMU” character</title></path>
+    <path id="hotspot-mosbys-mill-sign" class="hotspot" tabindex="0" role="button"
+          data-id="mosbys-mill-sign" data-title="Mosby’s Mill sign"
+          data-crop="108,524,220,190" data-center="218.0,620.5"
+          d="M 166 659 L 270 659 L 270 585 L 166 579 Z"><title>Mosby’s Mill sign</title></path>
+    <path id="hotspot-red-lobster-character" class="hotspot" tabindex="0" role="button"
+          data-id="red-lobster-character" data-title="Red lobster character"
+          data-crop="38,416,220,225" data-center="146.2,529.2"
+          d="M 105 585 L 166 585.72 L 166 579 L 189.39 580.35 L 178 475 L 112 471 Z"><title>Red lobster character</title></path>
+    <path id="hotspot-radio-tower" class="hotspot" tabindex="0" role="button"
+          data-id="radio-tower" data-title="Radio tower"
+          data-crop="194,460,220,359" data-center="306.2,639.0"
+          d="M 264.48 584.68 L 270 585 L 270 659 L 261.8 659 L 258 764 L 350 759 L 350 518 L 267 515 Z"><title>Radio tower</title></path>
+    <path id="hotspot-harrisonburg-baptist-church" class="hotspot" tabindex="0" role="button"
+          data-id="harrisonburg-baptist-church" data-title="Harrisonburg Baptist Church"
+          data-crop="93,568,287,303" data-center="235.8,716.8"
+          d="M 148 790 L 302.85 813.41 L 302 810 L 320.24 807.39 L 321.56 760.55 L 258 764 L 261.8 659 L 166 659 L 166 624.37 L 150 623 Z"><title>Harrisonburg Baptist Church</title></path>
+    <path id="hotspot-harrisonburg-rockingham-historical-society" class="hotspot" tabindex="0" role="button"
+          data-id="harrisonburg-rockingham-historical-society" data-title="Harrisonburg-Rockingham Historical Society"
+          data-crop="495,544,256,276" data-center="623.2,682.0"
+          d="M 550 765 L 621.69 763.53 L 622 753 L 695.88 752.34 L 694 599 L 553 602 Z"><title>Harrisonburg-Rockingham Historical Society</title></path>
+    <path id="hotspot-asbury-united-methodist-church" class="hotspot" tabindex="0" role="button"
+          data-id="asbury-united-methodist-church" data-title="Asbury United Methodist Church"
+          data-crop="645,524,243,298" data-center="766.2,673.8"
+          d="M 700.23 752.3 L 832.71 751.13 L 831.12 680 L 742 680 L 742 591 L 829.16 591.94 L 829 585 L 703 579 Z"><title>Asbury United Methodist Church</title></path>
+    <path id="hotspot-municipal-building" class="hotspot" tabindex="0" role="button"
+          data-id="municipal-building" data-title="Municipal Building"
+          data-crop="300,578,345,275" data-center="473.8,721.8"
+          d="M 359 795 L 526 798 L 558.67 764.82 L 550 765 L 551.96 658.42 L 539 633 L 355 650 Z"><title>Municipal Building</title></path>
+    <path id="hotspot-valley-memorial-hospital-sign" class="hotspot" tabindex="0" role="button"
+          data-id="valley-memorial-hospital-sign" data-title="Valley Memorial Hospital sign"
+          data-crop="246,742,220,191" data-center="356.2,838.0"
+          d="M 319 878 L 411 867 L 393 797 L 302 810 Z"><title>Valley Memorial Hospital sign</title></path>
+    <path id="hotspot-massanutten-bank-small-branch" class="hotspot" tabindex="0" role="button"
+          data-id="massanutten-bank-small-branch" data-title="Massanutten Bank &amp; Trust small branch"
+          data-crop="60,950,298,260" data-center="211.5,1080.0"
+          d="M 115 1125 L 302 1155 L 303 1035 L 126 1005 Z"><title>Massanutten Bank &amp; Trust small branch</title></path>
+    <path id="hotspot-valley-civic-center" class="hotspot" tabindex="0" role="button"
+          data-id="valley-civic-center" data-title="Valley Civic Center storefront"
+          data-crop="375,795,332,229" data-center="541.8,908.0"
+          d="M 455 969 L 652 955 L 630 850 L 430 858 Z"><title>Valley Civic Center storefront</title></path>
+    <path id="hotspot-james-madison-university-main-building" class="hotspot" tabindex="0" role="button"
+          data-id="james-madison-university-main-building" data-title="James Madison University main building"
+          data-crop="460,840,402,321" data-center="654.8,1001.0"
+          d="M 518.43 1040 L 570 1040 L 576.52 1105.2 L 576.08 1100.79 L 805.13 1092.87 L 787.38 967.98 L 722 969 L 718 898 L 777.6 899.22 L 777 895 L 639.76 896.57 L 652 955 L 516.61 964.62 Z"><title>James Madison University main building</title></path>
+    <path id="hotspot-jmu-front-lawn-figures" class="hotspot" tabindex="0" role="button"
+          data-id="jmu-front-lawn-figures" data-title="JMU front-lawn figures"
+          data-crop="395,985,245,260" data-center="513.8,1113.8"
+          d="M 450 1111.71 L 472 1112 L 477.92 1186.03 L 585 1190 L 570 1040 L 450 1040 Z"><title>JMU front-lawn figures</title></path>
+    <path id="hotspot-lowenbrau-truck" class="hotspot" tabindex="0" role="button"
+          data-id="lowenbrau-truck" data-title="Löwenbräu truck"
+          data-crop="663,843,307,181" data-center="817.2,933.8"
+          d="M 722 969 L 915 966 L 914 902 L 718 898 Z"><title>Löwenbräu truck</title></path>
+    <path id="hotspot-rockingham-memorial-hospital" class="hotspot" tabindex="0" role="button"
+          data-id="rockingham-memorial-hospital" data-title="Rockingham Memorial Hospital"
+          data-crop="515,1035,428,242" data-center="728.8,1158.8"
+          d="M 570 1210.39 L 782.88 1208.53 L 782.07 1222 L 782.07 1222 L 784 1190 L 887.24 1190.91 L 887.98 1092.55 L 850 1093 L 850 1091.31 L 576.08 1100.79 L 585 1190 L 570 1189.44 Z"><title>Rockingham Memorial Hospital</title></path>
+    <path id="hotspot-hospital-red-construction-area" class="hotspot" tabindex="0" role="button"
+          data-id="hospital-red-construction-area" data-title="Red earth / construction area near hospital"
+          data-crop="330,1153,569,196" data-center="609.8,1252.0"
+          d="M 385 1294 L 825 1294 L 829.37 1274.21 L 779 1273 L 782.88 1208.53 L 568.4 1210.4 L 580 1280 L 385 1288.83 Z M 479.93 1211.17 L 480 1212 L 479.93 1211.17 Z"><title>Red earth / construction area near hospital</title></path>
+    <path id="hotspot-purcell-park" class="hotspot" tabindex="0" role="button"
+          data-id="purcell-park" data-title="Purcell Park label and lawn"
+          data-crop="153,1190,472,235" data-center="388.2,1306.2"
+          d="M 208 1370 L 570 1350 L 567.33 1294 L 385 1294 L 385 1288.83 L 566.7 1280.6 L 315 1292 L 303.28 1256.06 L 277.76 1257.14 L 280 1302 L 209.23 1302.43 Z"><title>Purcell Park label and lawn</title></path>
+    <path id="hotspot-valley-mall" class="hotspot" tabindex="0" role="button"
+          data-id="valley-mall" data-title="Valley Mall"
+          data-crop="480,1223,488,264" data-center="720.0,1352.0"
+          d="M 539.22 1371.66 L 672 1368 L 676.05 1423.42 L 675.65 1417.9 L 704 1417 L 704.13 1421.71 L 913 1409 L 902.45 1355.84 L 866 1356 L 868.56 1278.59 L 828.12 1279.89 L 825 1294 L 567.33 1294 L 570 1350 L 540.62 1351.62 Z"><title>Valley Mall</title></path>
+    <path id="hotspot-zaggers-sign" class="hotspot" tabindex="0" role="button"
+          data-id="zaggers-sign" data-title="Zaggers sign"
+          data-crop="472,1313,261,192" data-center="601.8,1410.0"
+          d="M 530 1450 L 678 1450 L 672 1368 L 527 1372 Z"><title>Zaggers sign</title></path>
+    <path id="hotspot-cheerleader-at-mall" class="hotspot" tabindex="0" role="button"
+          data-id="cheerleader-at-mall" data-title="Cheerleader near Valley Mall"
+          data-crop="549,1362,220,258" data-center="658.2,1491.8"
+          d="M 611 1565 L 708 1565 L 704 1417 L 675.65 1417.9 L 678 1450 L 610.21 1450 Z"><title>Cheerleader near Valley Mall</title></path>
+    <path id="hotspot-rooster-lower-left" class="hotspot" tabindex="0" role="button"
+          data-id="rooster-lower-left" data-title="Large rooster at lower left"
+          data-crop="50,1350,257,307" data-center="177.8,1501.8"
+          d="M 112 1602 L 252 1590 L 242 1405 L 105 1410 Z"><title>Large rooster at lower left</title></path>
+    <path id="hotspot-swing-set-purcell-park" class="hotspot" tabindex="0" role="button"
+          data-id="swing-set-purcell-park" data-title="Swing set in Purcell Park"
+          data-crop="62,1127,273,231" data-center="197.2,1242.2"
+          d="M 117 1303 L 280 1302 L 274 1182 L 118 1182 Z"><title>Swing set in Purcell Park</title></path>
+    <path id="hotspot-plane-in-park" class="hotspot" tabindex="0" role="button"
+          data-id="plane-in-park" data-title="Small airplane in Purcell Park"
+          data-crop="230,1135,405,212" data-center="436.2,1240.5"
+          d="M 315 1292 L 580 1280 L 565 1190 L 478.49 1193.09 L 480 1212 L 312 1214 L 313.15 1198.99 L 285 1200 Z"><title>Small airplane in Purcell Park</title></path>
+    <path id="hotspot-horse-and-bull-gag" class="hotspot" tabindex="0" role="button"
+          data-id="horse-and-bull-gag" data-title="Horse and bull gag"
+          data-crop="257,1055,278,214" data-center="396.0,1162.0"
+          d="M 312 1214 L 480 1212 L 472 1112 L 320 1110 Z"><title>Horse and bull gag</title></path>
+    <path id="hotspot-downtown-row-wilson-jewelers" class="hotspot" tabindex="0" role="button"
+          data-id="downtown-row-wilson-jewelers" data-title="Downtown row including Wilson Jewelers"
+          data-crop="799,459,350,278" data-center="971.5,598.8"
+          d="M 854 682 L 1094 681 L 1080 514 L 858 518 Z"><title>Downtown row including Wilson Jewelers</title></path>
+    <path id="hotspot-chocolate-camper-storefront" class="hotspot" tabindex="0" role="button"
+          data-id="chocolate-camper-storefront" data-title="Chocolate / camper storefront"
+          data-crop="678,536,220,199" data-center="788.5,635.8"
+          d="M 742 680 L 835 680 L 835 592 L 742 591 Z"><title>Chocolate / camper storefront</title></path>
+    <path id="hotspot-jess-quick-lunch" class="hotspot" tabindex="0" role="button"
+          data-id="jess-quick-lunch" data-title="Jess’ Quick Lunch"
+          data-crop="793,649,293,190" data-center="939.5,743.8"
+          d="M 1031 784 L 1030 704 L 980 704 L 983.69 783.74 Z M 849 783 L 910 783.34 L 910 704 L 848 704 Z"><title>Jess’ Quick Lunch</title></path>
+    <path id="hotspot-rockingham-national-bank-storefront" class="hotspot" tabindex="0" role="button"
+          data-id="rockingham-national-bank-storefront" data-title="Rockingham National Bank storefront"
+          data-crop="565,696,337,180" data-center="733.8,786.0"
+          d="M 620 820 L 846 820 L 847 751 L 622 753 Z"><title>Rockingham National Bank storefront</title></path>
+    <path id="hotspot-court-house-downtown-building" class="hotspot" tabindex="0" role="button"
+          data-id="court-house-downtown-building" data-title="Large courthouse-area building"
+          data-crop="1013,442,437,290" data-center="1232.2,586.8"
+          d="M 1068.29 514.21 L 1080 514 L 1093.65 676.86 L 1174.06 676.36 L 1174 666 L 1395 653.06 L 1395 498 L 1068 497 Z M 1194 612 L 1124 612 L 1124 520 L 1194 523 Z"><title>Large courthouse-area building</title></path>
+    <path id="hotspot-american-flag-court-square" class="hotspot" tabindex="0" role="button"
+          data-id="american-flag-court-square" data-title="American flag at Court Square"
+          data-crop="1049,465,220,202" data-center="1159.0,566.8"
+          d="M 1124 612 L 1194 612 L 1194 523 L 1124 520 Z"><title>American flag at Court Square</title></path>
+    <path id="hotspot-confederate-monument" class="hotspot" tabindex="0" role="button"
+          data-id="confederate-monument" data-title="Confederate monument"
+          data-crop="769,713,342,308" data-center="941.8,868.0"
+          d="M 829.97 900.29 L 914 902 L 914.22 916.39 L 930 916 L 931.42 966 L 931.42 966 L 931.02 951.96 L 1045.84 951.21 L 1056 772 L 1030.84 771.53 L 1031 784 L 983.69 783.74 L 985 812 L 910 812 L 910 783.34 L 849 783 L 848.81 768.13 L 846.75 768.09 L 846 820 L 837.27 820 Z"><title>Confederate monument</title></path>
+    <path id="hotspot-monument-soldier" class="hotspot" tabindex="0" role="button"
+          data-id="monument-soldier" data-title="Monument soldier figure"
+          data-crop="838,649,220,218" data-center="946.2,758.0"
+          d="M 910 812 L 985 812 L 980 704 L 910 704 Z"><title>Monument soldier figure</title></path>
+    <path id="hotspot-outfitters-yellow-arch" class="hotspot" tabindex="0" role="button"
+          data-id="outfitters-yellow-arch" data-title="The Outfitters yellow arch"
+          data-crop="870,896,263,264" data-center="1001.5,1028.2"
+          d="M 925 1105 L 1078 1105 L 1078 1007.88 L 1055 1008 L 1055 951.15 L 931.02 951.96 L 935 1092 L 925 1092.12 Z"><title>The Outfitters yellow arch</title></path>
+    <path id="hotspot-rolling-hills-shopping-center" class="hotspot" tabindex="0" role="button"
+          data-id="rolling-hills-shopping-center" data-title="Rolling Hills Shopping Center / Outfitters"
+          data-crop="1000,859,296,204" data-center="1147.8,960.8"
+          d="M 1055 1008 L 1088 1007.82 L 1088 1000 L 1175 998 L 1175.33 1007.35 L 1241 1007 L 1240.65 974 L 1210 974 L 1211.76 914 L 1055 914 Z"><title>Rolling Hills Shopping Center / Outfitters</title></path>
+    <path id="hotspot-mountain-man-outfitters" class="hotspot" tabindex="0" role="button"
+          data-id="mountain-man-outfitters" data-title="Mountain man near Outfitters"
+          data-crop="782,861,220,287" data-center="891.2,1004.8"
+          d="M 850 1093 L 935 1092 L 930 916 L 914.22 916.39 L 915 966 L 850 967.01 Z"><title>Mountain man near Outfitters</title></path>
+    <path id="hotspot-small-yellow-buggy" class="hotspot" tabindex="0" role="button"
+          data-id="small-yellow-buggy" data-title="Small yellow buggy"
+          data-crop="1023,943,220,195" data-center="1132.2,1041.0"
+          d="M 1088 1083 L 1178 1083 L 1175 998 L 1088 1000 Z"><title>Small yellow buggy</title></path>
+    <path id="hotspot-big-east-market-flower-road" class="hotspot" tabindex="0" role="button"
+          data-id="big-east-market-flower-road" data-title="East Market Street flower-shaped road"
+          data-crop="903,1025,404,260" data-center="1103.0,1154.0"
+          d="M 965 1230 L 1137 1227 L 1137 1212 L 1170 1212 L 1170.38 1226.42 L 1205.2 1225.82 L 1205.12 1225 L 1198 1225 L 1198 1132 L 1242.43 1132.51 L 1238.2 1091.6 L 1187 1092 L 1187.1 1080.18 L 1177.9 1080.21 L 1178 1083 L 1088 1083 L 1088 1080.53 L 1078 1080.57 L 1078 1105 L 959.13 1105 Z"><title>East Market Street flower-shaped road</title></path>
+    <path id="hotspot-us-33-marker" class="hotspot" tabindex="0" role="button"
+          data-id="us-33-marker" data-title="U.S. Route 33 marker"
+          data-crop="1044,1141,220,180" data-center="1153.8,1231.0"
+          d="M 1137 1212 L 1137 1250 L 1171 1250 L 1170 1212 Z"><title>U.S. Route 33 marker</title></path>
+    <path id="hotspot-massanutten-bank-logo" class="hotspot" tabindex="0" role="button"
+          data-id="massanutten-bank-logo" data-title="Massanutten Bank &amp; Trust logo"
+          data-crop="724,1135,235,196" data-center="841.2,1232.5"
+          d="M 779 1273 L 904 1276 L 898 1191 L 784 1190 Z"><title>Massanutten Bank &amp; Trust logo</title></path>
+    <path id="hotspot-wooden-bank-building" class="hotspot" tabindex="0" role="button"
+          data-id="wooden-bank-building" data-title="Wooden bank building"
+          data-crop="811,1177,342,234" data-center="982.2,1294.5"
+          d="M 866 1356 L 1098 1355 L 1095 1232 L 901.08 1234.59 L 904 1276 L 868.67 1275.15 Z"><title>Wooden bank building</title></path>
+    <path id="hotspot-red-roof-savings-loan-bottom" class="hotspot" tabindex="0" role="button"
+          data-id="red-roof-savings-loan-bottom" data-title="Rockingham Savings &amp; Loan bottom building"
+          data-crop="680,1360,477,260" data-center="918.5,1490.0"
+          d="M 735 1538.9 L 1000 1535 L 1000 1565 L 1102 1565 L 1102 1415 L 814.39 1415 L 735 1419.83 Z"><title>Rockingham Savings &amp; Loan bottom building</title></path>
+    <path id="hotspot-parus-associates-copyright" class="hotspot" tabindex="0" role="button"
+          data-id="parus-associates-copyright" data-title="Parus &amp; Associates copyright area"
+          data-crop="605,1471,450,180" data-center="830.0,1562.2"
+          d="M 660 1587 L 1000 1587 L 1000 1535 L 707.31 1539.3 L 708 1565 L 660 1565 Z"><title>Parus &amp; Associates copyright area</title></path>
+    <path id="hotspot-rockingham-national-bank-curved-building" class="hotspot" tabindex="0" role="button"
+          data-id="rockingham-national-bank-curved-building" data-title="Rockingham National Bank curved building"
+          data-crop="1119,598,346,283" data-center="1288.8,742.8"
+          d="M 1175 826 L 1410 826 L 1409.51 820 L 1352 820 L 1352 718 L 1396 718 L 1396 655 L 1396.16 655.02 L 1396 653 L 1174 666 Z"><title>Rockingham National Bank curved building</title></path>
+    <path id="hotspot-valley-national-bank" class="hotspot" tabindex="0" role="button"
+          data-id="valley-national-bank" data-title="Valley National Bank"
+          data-crop="1341,600,301,272" data-center="1491.0,740.8"
+          d="M 1396 718 L 1441 718 L 1441 815.47 L 1516.99 816.27 L 1518 790 L 1586.65 792.05 L 1585 676 L 1396 655 Z"><title>Valley National Bank</title></path>
+    <path id="hotspot-walmart-storefront" class="hotspot" tabindex="0" role="button"
+          data-id="walmart-storefront" data-title="Walmart storefront"
+          data-crop="1286,663,220,212" data-center="1396.5,769.0"
+          d="M 1352 820 L 1441 820 L 1441 718 L 1352 718 Z"><title>Walmart storefront</title></path>
+    <path id="hotspot-rockingham-national-bank-red-building" class="hotspot" tabindex="0" role="button"
+          data-id="rockingham-national-bank-red-building" data-title="Rockingham National Bank red building"
+          data-crop="1629,648,326,233" data-center="1790.5,764.8"
+          d="M 1686 826 L 1900 820 L 1892 703 L 1684 710 Z"><title>Rockingham National Bank red building</title></path>
+    <path id="hotspot-armored-truck" class="hotspot" tabindex="0" role="button"
+          data-id="armored-truck" data-title="Armored truck"
+          data-crop="1460,735,249,190" data-center="1584.8,830.5"
+          d="M 1515 868 L 1654 870 L 1652 794 L 1518 790 Z"><title>Armored truck</title></path>
+    <path id="hotspot-rockingham-savings-loan-upper" class="hotspot" tabindex="0" role="button"
+          data-id="rockingham-savings-loan-upper" data-title="Rockingham Savings &amp; Loan upper building"
+          data-crop="1497,771,423,218" data-center="1707.5,881.5"
+          d="M 1552 934 L 1694.87 934 L 1695 912 L 1818 911 L 1819.32 934 L 1865 934 L 1858 832 L 1652.89 827.94 L 1654 870 L 1553.82 868.56 Z"><title>Rockingham Savings &amp; Loan upper building</title></path>
+    <path id="hotspot-dairy-truck" class="hotspot" tabindex="0" role="button"
+          data-id="dairy-truck" data-title="Dairy truck"
+          data-crop="1277,815,367,240" data-center="1460.8,936.2"
+          d="M 1332.72 910.21 L 1384 912 L 1385 974 L 1384.8 961.83 L 1443 960 L 1443.41 986.84 L 1403 987 L 1589 986.24 L 1589 934 L 1552 934 L 1553.76 870.69 L 1333 875 Z"><title>Dairy truck</title></path>
+    <path id="hotspot-hess-and-miller-sign" class="hotspot" tabindex="0" role="button"
+          data-id="hess-and-miller-sign" data-title="Hess &amp; Miller Inc. sign"
+          data-crop="1155,850,285,180" data-center="1297.8,941.5"
+          d="M 1210 974 L 1385 974 L 1384 912 L 1212 906 Z"><title>Hess &amp; Miller Inc. sign</title></path>
+    <path id="hotspot-hess-and-miller-building" class="hotspot" tabindex="0" role="button"
+          data-id="hess-and-miller-building" data-title="Hess &amp; Miller building"
+          data-crop="1132,905,368,242" data-center="1315.8,1027.5"
+          d="M 1187 1092 L 1445 1090 L 1444.78 1076 L 1404 1076 L 1403 987 L 1443.41 986.84 L 1443 960 L 1384.8 961.83 L 1385 974 L 1240.65 974 L 1241 1007 L 1187.68 1007.29 Z"><title>Hess &amp; Miller building</title></path>
+    <path id="hotspot-lite-beer-truck" class="hotspot" tabindex="0" role="button"
+          data-id="lite-beer-truck" data-title="Lite beer truck"
+          data-crop="1348,931,367,200" data-center="1528.8,1031.2"
+          d="M 1404 1076 L 1660 1076 L 1648 986 L 1403 987 Z"><title>Lite beer truck</title></path>
+    <path id="hotspot-black-bear-trash-bag" class="hotspot" tabindex="0" role="button"
+          data-id="black-bear-trash-bag" data-title="Bear with trash bag"
+          data-crop="1639,856,244,284" data-center="1758.8,998.2"
+          d="M 1694 1085 L 1828 1085 L 1818 911 L 1695 912 Z"><title>Bear with trash bag</title></path>
+    <path id="hotspot-welcome-to-harrisonburg-sign" class="hotspot" tabindex="0" role="button"
+          data-id="welcome-to-harrisonburg-sign" data-title="Welcome to Harrisonburg sign"
+          data-crop="1143,1077,370,203" data-center="1328.0,1179.2"
+          d="M 1458 1225 L 1458 1135 L 1445.24 1134.85 L 1446 1200 L 1359.76 1200 L 1362.71 1225 Z M 1198 1225 L 1205.12 1225 L 1202 1195 L 1330 1186.79 L 1330 1133.52 L 1198 1132 Z"><title>Welcome to Harrisonburg sign</title></path>
+    <path id="hotspot-eagle-under-welcome-sign" class="hotspot" tabindex="0" role="button"
+          data-id="eagle-under-welcome-sign" data-title="Eagle under welcome sign"
+          data-crop="1147,1130,276,197" data-center="1284.5,1230.5"
+          d="M 1210 1272 L 1368 1270 L 1359.76 1200 L 1330 1200 L 1330 1186.79 L 1202 1195 Z"><title>Eagle under welcome sign</title></path>
+    <path id="hotspot-gittim-mom-sign" class="hotspot" tabindex="0" role="button"
+          data-id="gittim-mom-sign" data-title="“Git ’im, Mom!” sign"
+          data-crop="1275,1059,226,196" data-center="1387.8,1157.2"
+          d="M 1330 1200 L 1446 1200 L 1445 1114 L 1330 1115 Z"><title>“Git ’im, Mom!” sign</title></path>
+    <path id="hotspot-racehorse-rider-scene" class="hotspot" tabindex="0" role="button"
+          data-id="racehorse-rider-scene" data-title="Racehorse and rider scene"
+          data-crop="1513,1039,437,247" data-center="1729.8,1162.5"
+          d="M 1570 1231 L 1895 1227 L 1886 1094 L 1568 1098 Z"><title>Racehorse and rider scene</title></path>
+    <path id="hotspot-city-seal-of-harrisonburg" class="hotspot" tabindex="0" role="button"
+          data-id="city-seal-of-harrisonburg" data-title="City of Harrisonburg seal"
+          data-crop="1283,1175,507,400" data-center="1534.0,1377.5"
+          d="M 1431.12 1519.53 L 1432 1468 L 1565 1472 L 1565.21 1495.18 L 1650 1496 L 1651.48 1518.42 L 1735 1518 L 1732.96 1459.21 L 1710 1460 L 1710 1355 L 1729.34 1355 L 1725 1230 L 1364.61 1241.17 L 1368 1270 L 1357 1270.14 L 1357 1287.49 L 1387 1290 L 1387 1515 L 1357 1515 L 1357 1519.9 Z"><title>City of Harrisonburg seal</title></path>
+    <path id="hotspot-office-building-lower-right-center" class="hotspot" tabindex="0" role="button"
+          data-id="office-building-lower-right-center" data-title="Modern office building lower right-center"
+          data-crop="1033,1210,409,360" data-center="1237.8,1396.2"
+          d="M 1387 1515 L 1387 1290 L 1357 1287.49 L 1357 1515 Z M 1088.6 1415 L 1102 1415 L 1102 1515 L 1130 1515 L 1130 1465 L 1255 1465 L 1255.6 1515 L 1260 1515 L 1260 1279.38 L 1095.82 1265.65 L 1098 1355 L 1088.36 1355.04 Z"><title>Modern office building lower right-center</title></path>
+    <path id="hotspot-tree-trunk-speech-gag" class="hotspot" tabindex="0" role="button"
+          data-id="tree-trunk-speech-gag" data-title="Tree-trunk speech gag"
+          data-crop="1198,1163,220,434" data-center="1308.5,1379.5"
+          d="M 1260 1542 L 1357 1538 L 1357 1270.14 L 1260 1271.37 Z"><title>Tree-trunk speech gag</title></path>
+    <path id="hotspot-hunter-bottom-right" class="hotspot" tabindex="0" role="button"
+          data-id="hunter-bottom-right" data-title="Hunter at lower right"
+          data-crop="1375,1413,246,227" data-center="1498.2,1527.5"
+          d="M 1430 1585 L 1566 1585 L 1565.9 1573.63 L 1546 1574 L 1546 1495 L 1565.21 1495.18 L 1565 1472 L 1432 1468 Z"><title>Hunter at lower right</title></path>
+    <path id="hotspot-spotted-dog-bottom-right" class="hotspot" tabindex="0" role="button"
+          data-id="spotted-dog-bottom-right" data-title="Spotted dog near hunter"
+          data-crop="1490,1440,220,189" data-center="1599.2,1534.2"
+          d="M 1546 1574 L 1655 1572 L 1650 1496 L 1546 1495 Z"><title>Spotted dog near hunter</title></path>
+    <path id="hotspot-cannon-far-right" class="hotspot" tabindex="0" role="button"
+          data-id="cannon-far-right" data-title="Cannon at far right"
+          data-crop="1763,1305,224,220" data-center="1873.5,1415.8"
+          d="M 1819 1470 L 1932 1468 L 1925 1365 L 1818 1360 Z"><title>Cannon at far right</title></path>
+    <path id="hotspot-sleeping-figure-zs" class="hotspot" tabindex="0" role="button"
+          data-id="sleeping-figure-zs" data-title="Sleeping figure with Zs"
+          data-crop="1655,1300,255,215" data-center="1780.2,1406.2"
+          d="M 1710 1460 L 1818.87 1456.25 L 1818 1360 L 1846.57 1361.34 L 1846 1355 L 1710 1355 Z"><title>Sleeping figure with Zs</title></path>
+    <path id="hotspot-dalmation-and-turkey-hunter-note" class="hotspot" tabindex="0" role="button"
+          data-id="dalmation-and-turkey-hunter-note" data-title="Hunter note near bottom center-right"
+          data-crop="1075,1410,236,193" data-center="1192.8,1506.5"
+          d="M 1130 1548 L 1256 1548 L 1255 1465 L 1130 1465 Z"><title>Hunter note near bottom center-right</title></path>
+  </g>
+</svg>

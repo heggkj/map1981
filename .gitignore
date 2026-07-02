@@ -1,0 +1,10 @@
+.env
+.env.*
+!.env.example
+.netlify/
+node_modules/
+*.log
+tiles/
+preview.html
+harrisonburg_1981_overlay_preview.*
+hotspot_contact_sheet.jpg

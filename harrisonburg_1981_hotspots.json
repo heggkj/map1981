@@ -1,0 +1,1674 @@
+{
+  "image": {
+    "width": 2047,
+    "height": 1726,
+    "source_copy": "harisonburg-map/harrisonburg_1981_map.jpg",
+    "overlay": "harisonburg-map/harrisonburg_1981_overlay-edited.svg"
+  },
+  "hotspots": [
+    {
+      "id": "lincoln-homestead-sign",
+      "title": "Lincoln Homestead sign",
+      "description": "A small sign in the upper-left corner labels the Lincoln Homestead, setting off one of the rural history vignettes around the edge of the Harrisonburg scene.",
+      "status": "draft",
+      "needs_review": false,
+      "svg_path": "M 158 283 L 222 283 L 222 232 L 158 232 Z",
+      "bbox": [
+        158.0,
+        232.0,
+        222.0,
+        283.0
+      ],
+      "crop": [
+        103,
+        177,
+        174,
+        161
+      ],
+      "center": [
+        190.0,
+        257.5
+      ],
+      "tile": "tiles-edited/lincoln-homestead-sign.webp",
+      "display_area": 3264.0
+    },
+    {
+      "id": "horse-drawn-wagon",
+      "title": "Horse-drawn wagon",
+      "description": "A horse-drawn wagon moves along the upper-left roadway, part of the map's old-time rural imagery and transportation jokes.",
+      "status": "draft",
+      "needs_review": false,
+      "svg_path": "m 148.58875,359.04041 91.68013,26.86291 131.26359,17.1318 -11.36027,-105.48678 -112.62915,-14.68542 -16,-53.87539 -69.66427,-0.38292 L 145,283 Z",
+      "bbox": [
+        145.0,
+        228.6,
+        371.53,
+        403.04
+      ],
+      "crop": [
+        73,
+        156,
+        371,
+        320
+      ],
+      "center": [
+        249.7,
+        322.8
+      ],
+      "tile": "tiles-edited/horse-drawn-wagon.webp",
+      "display_area": 26063.41
+    },
+    {
+      "id": "red-barn-hillside",
+      "title": "Red barn on hillside",
+      "description": "A red barn sits on the hillside near the top of the illustration, marking the agricultural landscape around Harrisonburg and Rockingham County.",
+      "status": "draft",
+      "needs_review": false,
+      "svg_path": "m 337.86292,271.75171 101.80531,6.78702 -3.9828,-61.76721 -90.38295,-1.46546 z",
+      "bbox": [
+        337.86,
+        215.31,
+        439.67,
+        278.54
+      ],
+      "crop": [
+        282,
+        160,
+        213,
+        174
+      ],
+      "center": [
+        390.3,
+        246.2
+      ],
+      "tile": "tiles-edited/red-barn-hillside.webp",
+      "display_area": 5686.91
+    },
+    {
+      "id": "fishing-boat-quote",
+      "title": "Boat with “I don’t believe it!” gag",
+      "description": "A small fishing boat gag appears on the water with the caption, \"I don't believe it!\" The joke is one of the tiny comic scenes tucked into the map.",
+      "status": "draft",
+      "needs_review": false,
+      "svg_path": "m 592.63444,166.77153 -14.31458,40.13708 -8.63627,51.4703 L 510,263 l -8.09471,61.15721 -38.63247,21.07639 -4.73775,30.70113 202.15048,6.46566 98.43164,-3.58789 0.34411,-29.63822 110.70073,0.76973 40.08846,-14.68363 -12.39831,-88.16513 C 833.63513,252.38336 773.8853,252.06698 710.2207,247.25 L 672,174 Z",
+      "bbox": [
+        458.54,
+        166.77,
+        910.25,
+        382.4
+      ],
+      "crop": [
+        314,
+        22,
+        741,
+        505
+      ],
+      "center": [
+        678.6,
+        297.7
+      ],
+      "tile": "tiles-edited/fishing-boat-quote.webp",
+      "display_area": 57225.78
+    },
+    {
+      "id": "us-route-42-sign",
+      "title": "U.S. Route 42 marker",
+      "description": "The U.S. Route 42 marker identifies one of the major roads threading through the illustrated town-and-county landscape.",
+      "status": "draft",
+      "needs_review": false,
+      "svg_path": "m 406.7821,406.2179 46.2232,-4.68014 4.81721,-88.89803 -50.1318,-2.9543 z",
+      "bbox": [
+        406.78,
+        309.69,
+        457.82,
+        406.22
+      ],
+      "crop": [
+        351,
+        254,
+        162,
+        208
+      ],
+      "center": [
+        431.0,
+        356.9
+      ],
+      "tile": "tiles-edited/us-route-42-sign.webp",
+      "display_area": 4464.32
+    },
+    {
+      "id": "poultry-festival-animals",
+      "title": "Poultry Festival animals",
+      "description": "A group of animals stands near the Poultry Festival reference, nodding to the region's poultry industry and festival culture.",
+      "status": "draft",
+      "needs_review": false,
+      "svg_path": "m 928.10305,263.67278 6.26251,44.99678 16.54444,8.40044 286.139,-8.02431 -12.1344,-92.21525 -35.6506,-20.34139 -16.5646,-47.06193 -216.20733,20.26888 z",
+      "bbox": [
+        928.1,
+        149.43,
+        1237.05,
+        317.07
+      ],
+      "crop": [
+        830,
+        51,
+        506,
+        365
+      ],
+      "center": [
+        1079.3,
+        240.6
+      ],
+      "tile": "tiles-edited/poultry-festival-animals.webp",
+      "display_area": 42473.51
+    },
+    {
+      "id": "udderly-impossible-cow",
+      "title": "“This is udderly impossible” cow",
+      "description": "A cow-centered visual pun reads as an \"udderly impossible\" gag, one of the map's playful animal jokes.",
+      "status": "draft",
+      "needs_review": false,
+      "svg_path": "m 1252.0404,296.45166 42.0053,35.18278 72.0755,14.39539 72.8169,-20.74541 6.9698,-12.15666 51.1277,4.83386 5.3211,-36.20128 -70.069,0.0623 -30.9425,-8.52641 -13.0705,-53.19177 -107.2588,-35.50516 -52.3761,19.1775 z",
+      "bbox": [
+        1228.64,
+        184.6,
+        1502.36,
+        346.03
+      ],
+      "crop": [
+        1141,
+        97,
+        449,
+        337
+      ],
+      "center": [
+        1341.3,
+        271.5
+      ],
+      "tile": "tiles-edited/udderly-impossible-cow.webp",
+      "display_area": 24428.21
+    },
+    {
+      "id": "court-square-village-sign",
+      "title": "Court Square Village storefront sign",
+      "description": "A storefront sign identifies Court Square Village, placing the viewer near the downtown commercial core.",
+      "status": "draft",
+      "needs_review": false,
+      "svg_path": "m 1355.0967,478.36556 v -76.8321 l -8.7259,-51.30499 -158.2775,-11.06735 -244.30208,23.09915 3.58386,77.80467 55.21642,51.53247 49.4508,-12.27755 z",
+      "bbox": [
+        943.79,
+        339.16,
+        1355.1,
+        491.6
+      ],
+      "crop": [
+        812,
+        208,
+        675,
+        415
+      ],
+      "center": [
+        1155.2,
+        413.3
+      ],
+      "tile": "tiles-edited/court-square-village-sign.webp",
+      "display_area": 52764.27
+    },
+    {
+      "id": "eastern-mennonite-college",
+      "title": "Eastern Mennonite College buildings",
+      "description": "This cluster marks Eastern Mennonite College, now Eastern Mennonite University, with campus buildings drawn into the upper-right portion of the map.",
+      "status": "draft",
+      "needs_review": false,
+      "svg_path": "m 1454.99,277.14 65.0398,-1.09431 -4.0351,37.54834 25.7395,33.60346 46.6102,40.71112 107.2989,-6.87445 26.1719,-23.5825 c 0,0 54.2952,-50.92764 54.0415,-46.21444 L 1782,205 l -100.7662,-3.09007 -75.9544,-47.9424 -36.8278,33.17353 -116.9894,16.95033 z",
+      "bbox": [
+        1451.46,
+        153.97,
+        1782.0,
+        387.91
+      ],
+      "crop": [
+        1346,
+        48,
+        541,
+        445
+      ],
+      "center": [
+        1626.3,
+        273.2
+      ],
+      "tile": "tiles-edited/eastern-mennonite-college.webp",
+      "display_area": 50551.75
+    },
+    {
+      "id": "hawk-or-eagle-upper-right",
+      "title": "Large bird above Eastern Mennonite College",
+      "description": "A large bird flies above the Eastern Mennonite College area, functioning as a small visual landmark in the upper-right sky.",
+      "status": "draft",
+      "needs_review": false,
+      "svg_path": "m 1764.322,353.10166 -35.9617,4.07583 -42.3066,37.81457 2.5456,32.08875 37.2993,-0.1186 -12.2237,38.80403 70.884,10.22847 35.8858,-52.56061 72.1493,-5.79966 5.6318,-39.09403 -54.4424,-1.41522 60.0742,-37.67882 c 0,0 -73.4788,-16.55989 -77.4834,-16.17749 z",
+      "bbox": [
+        1686.05,
+        322.89,
+        1903.86,
+        475.99
+      ],
+      "crop": [
+        1617,
+        253,
+        356,
+        292
+      ],
+      "center": [
+        1790.9,
+        396.2
+      ],
+      "tile": "tiles-edited/hawk-or-eagle-upper-right.webp",
+      "display_area": 19275.84
+    },
+    {
+      "id": "blacksmith-or-anvil-gag",
+      "title": "Village blacksmith / anvil gag",
+      "description": "A village blacksmith scene with an anvil appears among the downtown-area vignettes, adding an old-town trade reference and a bit of slapstick.",
+      "status": "draft",
+      "needs_review": false,
+      "svg_path": "m 1383.5483,481.36027 163.4763,41.2126 4.0658,-73.05663 72.1122,-6.09677 -91.0739,-87.21271 -18.0075,-35.09686 -67.507,1.37916 L 1444,342 l -92.8576,28.26888 z",
+      "bbox": [
+        1351.14,
+        321.11,
+        1623.2,
+        522.57
+      ],
+      "crop": [
+        1264,
+        234,
+        447,
+        376
+      ],
+      "center": [
+        1474.1,
+        419.3
+      ],
+      "tile": "tiles-edited/blacksmith-or-anvil-gag.webp",
+      "display_area": 31857.49
+    },
+    {
+      "id": "joseph-neys-building",
+      "title": "Joseph Neys building",
+      "description": "A building labeled for Joseph Neys appears in the older village/downtown portion of the illustration.",
+      "status": "draft",
+      "needs_review": false,
+      "svg_path": "m 1723.4709,716.44638 130.2407,-10.08875 12.8612,-46.35234 -20.9946,-174.45166 -217.7554,1.0304 -10.0003,148.40539 72.552,68.35776 z",
+      "bbox": [
+        1617.82,
+        485.55,
+        1866.57,
+        716.45
+      ],
+      "crop": [
+        1538,
+        406,
+        408,
+        390
+      ],
+      "center": [
+        1744.7,
+        595.6
+      ],
+      "tile": "tiles-edited/joseph-neys-building.webp",
+      "display_area": 50007.13
+    },
+    {
+      "id": "high-school-statue",
+      "title": "Basketball player statue",
+      "description": "A basketball-player figure or statue stands near the Harrisonburg High School area, calling attention to school spirit and athletics.",
+      "status": "draft",
+      "needs_review": false,
+      "svg_path": "m 371.63635,554.63973 74.13969,21.59617 74.13969,21.59617 63.55705,-12.80973 25.36069,-11.62142 17.72626,-72.69694 13.5035,-44.23754 -47.57202,-21.33423 -5.58261,-46.14616 -55.17605,-5.35862 -91.50745,30.81894 -76.22319,-3.77152 z",
+      "bbox": [
+        364.0,
+        383.63,
+        640.06,
+        597.83
+      ],
+      "crop": [
+        276,
+        295,
+        453,
+        391
+      ],
+      "center": [
+        499.0,
+        491.1
+      ],
+      "tile": "tiles-edited/high-school-statue.webp",
+      "display_area": 44605.45
+    },
+    {
+      "id": "bruce-street-house",
+      "title": "c.1750 Bruce Street house",
+      "description": "The c. 1750 Bruce Street house appears here as one of the historical-house references embedded in the drawing.",
+      "status": "draft",
+      "needs_review": false,
+      "svg_path": "m 684.24435,513.58875 217.83646,19.0861 1.72584,-167.22319 -143.17221,-11.17749 4.29152,31.6676 -154.12312,1.12984 -4.77723,46.15771 35.29786,15.97102 20.98329,39.82865 z",
+      "bbox": [
+        606.03,
+        354.27,
+        903.81,
+        532.67
+      ],
+      "crop": [
+        511,
+        259,
+        488,
+        369
+      ],
+      "center": [
+        777.3,
+        443.5
+      ],
+      "tile": "tiles-edited/bruce-street-house.webp",
+      "display_area": 39684.16
+    },
+    {
+      "id": "saved-by-jmu-character",
+      "title": "“Saved by JMU” character",
+      "description": "A character labeled \"Saved by JMU\" appears as a small joke in the central part of the map, near James Madison University references.",
+      "status": "draft",
+      "needs_review": false,
+      "svg_path": "m 579.59403,594.95431 -6.3563,193.41679 146.3325,2.5558 L 709.39671,729.54426 699.22319,589.90861 670,505 l -45.87349,10.90861 -9.38312,62.42617 z",
+      "bbox": [
+        573.24,
+        505.0,
+        719.57,
+        790.93
+      ],
+      "crop": [
+        482,
+        414,
+        329,
+        468
+      ],
+      "center": [
+        643.9,
+        669.3
+      ],
+      "tile": "tiles-edited/saved-by-jmu-character.webp",
+      "display_area": 31540.31
+    },
+    {
+      "id": "radio-tower",
+      "title": "Radio tower",
+      "description": "A radio tower rises above nearby buildings, a thin landmark that is easy to miss unless you scan the skyline carefully.",
+      "status": "draft",
+      "needs_review": false,
+      "svg_path": "m 316.01247,576.09125 -14.5204,54.71539 13.36027,146.52718 -22.51458,13.36027 1.92583,26.74699 67.18807,-2.13708 -6.68013,-186.60462 -16.19865,-42.1265 z",
+      "bbox": [
+        292.34,
+        576.09,
+        361.45,
+        817.44
+      ],
+      "crop": [
+        215,
+        499,
+        224,
+        396
+      ],
+      "center": [
+        330.8,
+        707.6
+      ],
+      "tile": "tiles-edited/radio-tower.webp",
+      "display_area": 11610.46
+    },
+    {
+      "id": "harrisonburg-baptist-church",
+      "title": "Harrisonburg Baptist Church",
+      "description": "Harrisonburg Baptist Church is shown as a prominent church building in the downtown/civic portion of the illustration.",
+      "status": "draft",
+      "needs_review": false,
+      "svg_path": "m 148,790 12.65855,71.12525 109.84938,-41.5822 5.83404,-16.92458 33.76637,-38.25125 -7.256,-61.44274 -25.78346,-31.51851 -20.4099,-78.25302 6.20298,-144.88454 -48.1924,-34.18516 -52.96393,26.89037 -13.83743,72.697 12.62916,118.87243 z",
+      "bbox": [
+        147.87,
+        414.08,
+        310.11,
+        861.13
+      ],
+      "crop": [
+        4,
+        271,
+        450,
+        734
+      ],
+      "center": [
+        214.8,
+        648.1
+      ],
+      "tile": "tiles-edited/harrisonburg-baptist-church.webp",
+      "display_area": 49553.51
+    },
+    {
+      "id": "asbury-united-methodist-church",
+      "title": "Asbury United Methodist Church",
+      "description": "Asbury United Methodist Church appears as another labeled church landmark in the central Harrisonburg scene.",
+      "status": "draft",
+      "needs_review": false,
+      "svg_path": "M 718.3618,754.20861 832.71,751.13 l 22.26763,-41.54654 2.49328,-39.12651 5.72583,-136.71525 -67.43742,-0.96861 -10.65735,43.63816 L 703,579 Z",
+      "bbox": [
+        703.0,
+        532.77,
+        863.2,
+        754.21
+      ],
+      "crop": [
+        633,
+        462,
+        301,
+        363
+      ],
+      "center": [
+        787.6,
+        649.6
+      ],
+      "tile": "tiles-edited/asbury-united-methodist-church.webp",
+      "display_area": 28435.11
+    },
+    {
+      "id": "municipal-building",
+      "title": "Municipal Building",
+      "description": "The Municipal Building appears as a civic landmark near the churches and downtown institutions in the center of the map.",
+      "status": "draft",
+      "needs_review": false,
+      "svg_path": "m 359,795 41.98604,17.31458 48.89319,24.0783 91.53202,-47.53525 10.54875,-76.99655 -50.1779,-55.95776 -140.10196,36.0861 z",
+      "bbox": [
+        359.0,
+        655.9,
+        551.96,
+        836.39
+      ],
+      "crop": [
+        298,
+        594,
+        315,
+        304
+      ],
+      "center": [
+        453.7,
+        744.4
+      ],
+      "tile": "tiles-edited/municipal-building.webp",
+      "display_area": 25614.61
+    },
+    {
+      "id": "valley-memorial-hospital-sign",
+      "title": "Valley Memorial Hospital sign",
+      "description": "A sign for Valley Memorial Hospital identifies the hospital area before the newer Rockingham Memorial Hospital reference elsewhere on the map.",
+      "status": "draft",
+      "needs_review": false,
+      "svg_path": "m 146.27079,1010.6484 120.62915,-46.30929 46.53884,-5.05207 78.98522,-60.40176 -7.12434,-63.54521 -65.33695,13.75349 -32.89057,-30.14455 -134.89803,60.71526 z",
+      "bbox": [
+        146.27,
+        818.95,
+        392.42,
+        1010.65
+      ],
+      "crop": [
+        68,
+        740,
+        403,
+        349
+      ],
+      "center": [
+        259.0,
+        907.6
+      ],
+      "tile": "tiles-edited/valley-memorial-hospital-sign.webp",
+      "display_area": 28480.0
+    },
+    {
+      "id": "massanutten-bank-small-branch",
+      "title": "Massanutten Bank & Trust small branch",
+      "description": "A small Massanutten Bank & Trust branch is shown among the central business and civic landmarks.",
+      "status": "draft",
+      "needs_review": false,
+      "svg_path": "M 147.44637,1192.7557 319.17749,1136.8682 312.54305,1035 l 8.71393,-66.90549 -65.72186,8.48461 -26.59536,47.61108 -78.12783,29.4794 z",
+      "bbox": [
+        147.45,
+        968.09,
+        321.26,
+        1192.76
+      ],
+      "crop": [
+        76,
+        897,
+        317,
+        367
+      ],
+      "center": [
+        237.3,
+        1084.7
+      ],
+      "tile": "tiles-edited/massanutten-bank-small-branch.webp",
+      "display_area": 26098.36
+    },
+    {
+      "id": "valley-civic-center",
+      "title": "Valley Civic Center storefront",
+      "description": "The Valley Civic Center storefront appears in the downtown commercial strip, one of several labeled businesses and public venues.",
+      "status": "draft",
+      "needs_review": false,
+      "svg_path": "m 330.94035,1054.8875 155.17785,-63.38269 87.42221,-41.43362 40.66125,-22.34753 22.52946,-13.75878 -10.54834,-89.73112 -68.30591,30.90332 -161.70768,70.45515 -9.97319,25.60282 -52.91691,6.51671 z",
+      "bbox": [
+        330.94,
+        824.23,
+        636.73,
+        1054.89
+      ],
+      "crop": [
+        233,
+        727,
+        501,
+        425
+      ],
+      "center": [
+        484.1,
+        939.8
+      ],
+      "tile": "tiles-edited/valley-civic-center.webp",
+      "display_area": 29847.87
+    },
+    {
+      "id": "james-madison-university-main-building",
+      "title": "James Madison University main building",
+      "description": "The main James Madison University building is drawn as a major campus landmark, anchoring the JMU portion of the map.",
+      "status": "draft",
+      "needs_review": false,
+      "svg_path": "m 543.24193,977.01587 0.0375,93.52193 53.28095,34.6622 96.89911,3.2244 138.39102,-72.8127 -38.7447,-33.2767 -34.84225,17.2432 -18.31457,-44.27949 -30.10468,-37.90651 22.30332,-48.11803 -80.936,-12.74458 -14.48054,42.20682 -59.0456,31.56901 z",
+      "bbox": [
+        543.24,
+        876.53,
+        831.85,
+        1108.42
+      ],
+      "crop": [
+        451,
+        784,
+        473,
+        417
+      ],
+      "center": [
+        662.6,
+        1010.4
+      ],
+      "tile": "tiles-edited/james-madison-university-main-building.webp",
+      "display_area": 39388.27
+    },
+    {
+      "id": "jmu-front-lawn-figures",
+      "title": "JMU front-lawn figures",
+      "description": "Small figures on the James Madison University front lawn add activity and humor to the campus scene.",
+      "status": "draft",
+      "needs_review": false,
+      "svg_path": "M 511.07552,1084.9895 500.62915,1112 l -3.62305,65.4413 88.94821,24.0104 -4.50265,-47.8894 -22.66089,-68.71 z",
+      "bbox": [
+        497.01,
+        1084.85,
+        585.95,
+        1201.45
+      ],
+      "crop": [
+        442,
+        1029,
+        199,
+        228
+      ],
+      "center": [
+        539.9,
+        1142.0
+      ],
+      "tile": "tiles-edited/jmu-front-lawn-figures.webp",
+      "display_area": 7745.07
+    },
+    {
+      "id": "lowenbrau-truck",
+      "title": "Löwenbräu truck",
+      "description": "A Löwenbräu truck drives near the JMU and hospital area, one of several delivery vehicles hidden in the illustration.",
+      "status": "draft",
+      "needs_review": false,
+      "svg_path": "m 749.67485,997.62915 187.27417,2.72585 -11.94024,-68.72537 -9.07732,-51.54786 -49.15813,5.71044 -7.16871,38.15681 -121.56421,-0.18278 z",
+      "bbox": [
+        738.04,
+        880.08,
+        936.95,
+        1000.36
+      ],
+      "crop": [
+        675,
+        817,
+        325,
+        247
+      ],
+      "center": [
+        845.4,
+        953.3
+      ],
+      "tile": "tiles-edited/lowenbrau-truck.webp",
+      "display_area": 16307.36
+    },
+    {
+      "id": "rockingham-memorial-hospital",
+      "title": "Rockingham Memorial Hospital",
+      "description": "Rockingham Memorial Hospital is labeled with its large hospital complex, one of the key institutional landmarks in the lower half of the map.",
+      "status": "draft",
+      "needs_review": false,
+      "svg_path": "m 590.04041,1216.1158 192.9839,2.067 h 108.79077 l 48.866,-29.1814 -1.16861,-68.7766 -49.81439,-9.1919 -45.04286,2.2597 -58.40313,-25.4152 -57.44883,27.0716 -100.20202,0.2186 -45.8411,-4.8345 -4.44028,17.6371 14.58346,50.9724 z",
+      "bbox": [
+        578.32,
+        1087.88,
+        940.68,
+        1218.18
+      ],
+      "crop": [
+        463,
+        972,
+        593,
+        362
+      ],
+      "center": [
+        761.9,
+        1162.3
+      ],
+      "tile": "tiles-edited/rockingham-memorial-hospital.webp",
+      "display_area": 37343.66
+    },
+    {
+      "id": "hospital-red-construction-area",
+      "title": "Red earth / construction area near hospital",
+      "description": "A red-earth construction area near Rockingham Memorial Hospital suggests campus or hospital expansion work in progress.",
+      "status": "draft",
+      "needs_review": false,
+      "svg_path": "m 540.55172,1294 79.2727,12.406 98.19304,-8.7648 45.70626,-20.2163 107.73608,39.9048 28.10181,-67.3665 -55.87703,-21.5598 -67.5475,22.6476 -51.46969,-11.0289 -115.23228,0.9156 -28.4808,-7.6984 -33.72246,21.2359 z",
+      "bbox": [
+        540.55,
+        1228.4,
+        899.56,
+        1317.33
+      ],
+      "crop": [
+        426,
+        1114,
+        588,
+        318
+      ],
+      "center": [
+        718.0,
+        1269.8
+      ],
+      "tile": "tiles-edited/hospital-red-construction-area.webp",
+      "display_area": 19891.38
+    },
+    {
+      "id": "valley-mall",
+      "title": "Valley Mall",
+      "description": "Valley Mall is shown as a large retail landmark, capturing the commercial growth and shopping culture of Harrisonburg in the early 1980s.",
+      "status": "draft",
+      "needs_review": false,
+      "svg_path": "m 511.54515,1304.8586 -15.13727,140.4401 95.66328,35.3796 50.17816,71.7787 62.70499,22.9576 34.48498,-105.035 39.0037,1.6045 70.56593,-13.0792 L 866,1356 l -34.6579,-7.7457 -24.21681,-12.0603 -56.56108,-39.3311 -91.62093,52.4868 -11.64457,-36.5676 -89.50122,-3.1515 z",
+      "bbox": [
+        496.41,
+        1296.86,
+        866.0,
+        1575.41
+      ],
+      "crop": [
+        378,
+        1178,
+        606,
+        516
+      ],
+      "center": [
+        674.1,
+        1412.3
+      ],
+      "tile": "tiles-edited/valley-mall.webp",
+      "display_area": 62155.54
+    },
+    {
+      "id": "zaggers-sign",
+      "title": "Zaggers sign",
+      "description": "A small Zaggers sign appears near the Valley Mall area, one of the many local business labels scattered through the scene.",
+      "status": "draft",
+      "needs_review": false,
+      "svg_path": "m 317.18998,1555.9278 259.65369,20.9947 6.0659,-72.0149 -68.3699,-33.8427 -200.34969,39.3093 z",
+      "bbox": [
+        314.19,
+        1471.06,
+        582.91,
+        1576.92
+      ],
+      "crop": [
+        229,
+        1386,
+        439,
+        276
+      ],
+      "center": [
+        460.8,
+        1527.4
+      ],
+      "tile": "tiles-edited/zaggers-sign.webp",
+      "display_area": 20275.89
+    },
+    {
+      "id": "rooster-lower-left",
+      "title": "Large rooster at lower left",
+      "description": "A large rooster dominates the lower-left area, a playful nod to poultry and rural Rockingham County identity.",
+      "status": "draft",
+      "needs_review": false,
+      "svg_path": "m 131.0861,1619.1775 144.77153,-2.457 5.26888,-228.898 -125.54834,5.9543 z",
+      "bbox": [
+        131.09,
+        1387.82,
+        281.13,
+        1619.18
+      ],
+      "crop": [
+        57,
+        1313,
+        299,
+        381
+      ],
+      "center": [
+        210.9,
+        1507.1
+      ],
+      "tile": "tiles-edited/rooster-lower-left.webp",
+      "display_area": 30638.91
+    },
+    {
+      "id": "swing-set-purcell-park",
+      "title": "Swing set in Purcell Park",
+      "description": "A small swing set in Purcell Park marks a recreational detail in the green park area.",
+      "status": "draft",
+      "needs_review": false,
+      "svg_path": "m 297.36365,1471.912 140.09668,-11.4974 9.26888,-120.9543 -85.63444,5.2487 -66.54834,16.7004 z",
+      "bbox": [
+        294.55,
+        1339.46,
+        446.73,
+        1471.91
+      ],
+      "crop": [
+        239,
+        1284,
+        263,
+        243
+      ],
+      "center": [
+        369.9,
+        1405.6
+      ],
+      "tile": "tiles-edited/swing-set-purcell-park.webp",
+      "display_area": 17399.0
+    },
+    {
+      "id": "plane-in-park",
+      "title": "Small airplane in Purcell Park",
+      "description": "A small airplane appears in the Purcell Park area, one of the whimsical objects hidden in the lower-left landscape.",
+      "status": "draft",
+      "needs_review": false,
+      "svg_path": "m 461.00867,1324.4464 46.46415,-42.5378 11.72054,-69.9596 -159.99149,10.7245 -100.60063,-17.3536 -48.21357,-17.1318 -75.88841,25.8119 16.79819,161.407 69.28496,2.9924 57.97503,-11.4238 33.1631,-20.9669 z",
+      "bbox": [
+        134.5,
+        1188.19,
+        519.19,
+        1378.4
+      ],
+      "crop": [
+        11,
+        1065,
+        632,
+        437
+      ],
+      "center": [
+        302.7,
+        1280.1
+      ],
+      "tile": "tiles-edited/plane-in-park.webp",
+      "display_area": 50476.61
+    },
+    {
+      "id": "horse-and-bull-gag",
+      "title": "Horse and bull gag",
+      "description": "A horse-and-bull scene forms a compact comic gag near the lower-left side of the illustration.",
+      "status": "draft",
+      "needs_review": false,
+      "svg_path": "m 324.40597,1213.0457 124.10196,-5.8172 17.01251,-59.4995 -45.97162,-2.2413 -23.23329,-16.8884 7.30448,-20.7056 -36.59356,-2.5738 -40.34631,10.4059 z",
+      "bbox": [
+        324.41,
+        1105.32,
+        465.52,
+        1213.05
+      ],
+      "crop": [
+        269,
+        1050,
+        252,
+        219
+      ],
+      "center": [
+        384.1,
+        1164.8
+      ],
+      "tile": "tiles-edited/horse-and-bull-gag.webp",
+      "display_area": 11303.57
+    },
+    {
+      "id": "downtown-row-wilson-jewelers",
+      "title": "Downtown row including Wilson Jewelers",
+      "description": "A downtown storefront row includes Wilson Jewelers and neighboring businesses, representing the dense commercial fabric around Court Square.",
+      "status": "draft",
+      "needs_review": false,
+      "svg_path": "m 854,682 60,-0.25 60,-0.25 174.5166,-2.15861 0.1087,-151.91608 -11.3431,-42.17099 -21.8403,1.72703 -16.1145,42.76215 -60.5198,-5.24783 -11.2944,-24.81025 -96.77367,-3.05579 -1.34319,48.47667 -64.7162,-0.38576 z",
+      "bbox": [
+        854.0,
+        485.25,
+        1148.63,
+        682.0
+      ],
+      "crop": [
+        760,
+        391,
+        483,
+        385
+      ],
+      "center": [
+        1008.6,
+        597.6
+      ],
+      "tile": "tiles-edited/downtown-row-wilson-jewelers.webp",
+      "display_area": 47659.28
+    },
+    {
+      "id": "jess-quick-lunch",
+      "title": "Jess’ Quick Lunch",
+      "description": "Jess' Quick Lunch is marked in the downtown row, highlighting a familiar local eatery in the city-center business district.",
+      "status": "draft",
+      "needs_review": false,
+      "svg_path": "m 855.68014,839.304 75.31458,-18.7461 9.0808,-25.35543 21.83346,24.43748 34.6984,-8.03911 37.56132,-35.71396 13.7037,43.49337 52.8302,-1.35898 4.2366,-99.9121 -156.62161,-1.32875 -97.45468,2.48846 z",
+      "bbox": [
+        850.86,
+        716.78,
+        1104.94,
+        839.3
+      ],
+      "crop": [
+        769,
+        635,
+        417,
+        286
+      ],
+      "center": [
+        972.7,
+        767.3
+      ],
+      "tile": "tiles-edited/jess-quick-lunch.webp",
+      "display_area": 24434.11
+    },
+    {
+      "id": "rockingham-national-bank-storefront",
+      "title": "Rockingham National Bank storefront",
+      "description": "A Rockingham National Bank storefront appears among the downtown buildings, one of several banking references in the map.",
+      "status": "draft",
+      "needs_review": false,
+      "svg_path": "m 676.304,867.71525 164.92447,-21.94901 1,-61.36556 -179.19335,7.72583 z",
+      "bbox": [
+        663.04,
+        784.4,
+        842.23,
+        867.72
+      ],
+      "crop": [
+        606,
+        727,
+        294,
+        198
+      ],
+      "center": [
+        752.4,
+        822.4
+      ],
+      "tile": "tiles-edited/rockingham-national-bank-storefront.webp",
+      "display_area": 11873.12
+    },
+    {
+      "id": "court-house-downtown-building",
+      "title": "Large courthouse-area building",
+      "description": "A large courthouse-area building anchors the downtown block near Court Square, the flag, and the surrounding storefronts.",
+      "status": "draft",
+      "needs_review": false,
+      "svg_path": "M 1395,653.06 V 498 Z",
+      "bbox": [
+        1395.0,
+        498.0,
+        1395.0,
+        653.06
+      ],
+      "crop": [
+        1340,
+        443,
+        110,
+        266
+      ],
+      "center": [
+        1395.0,
+        601.4
+      ],
+      "tile": "tiles-edited/court-house-downtown-building.webp",
+      "display_area": 0.0
+    },
+    {
+      "id": "american-flag-court-square",
+      "title": "American flag at Court Square",
+      "description": "The American flag at Court Square marks the civic center of downtown Harrisonburg and helps orient the viewer in the courthouse area.",
+      "status": "draft",
+      "needs_review": false,
+      "svg_path": "m 1155.4921,677.84705 h 164.4762 l 18.3704,19.26227 61.314,3.03908 c -9.8538,-76.66167 1.5759,-216.36801 1.4315,-216.27491 l -253.2266,2.72583 z",
+      "bbox": [
+        1147.86,
+        483.78,
+        1401.23,
+        700.15
+      ],
+      "crop": [
+        1066,
+        402,
+        417,
+        380
+      ],
+      "center": [
+        1276.2,
+        583.7
+      ],
+      "tile": "tiles-edited/american-flag-court-square.webp",
+      "display_area": 48261.49
+    },
+    {
+      "id": "confederate-monument",
+      "title": "Confederate monument",
+      "description": "The Confederate monument is shown at Court Square. The title should be reviewed for present-day interpretive language and historical accuracy.",
+      "status": "draft",
+      "needs_review": false,
+      "svg_path": "m 940.66938,804.8595 -16.17202,23.65901 -7.41444,27.75027 L 930,916 l 9.05444,10.87349 10.49736,31.49207 4.37152,20.31498 95.73388,-4.56722 -16.942,-189.78817 -16.7874,28.62916 c 0,0 -5.6675,2.27416 -48.87232,14.68013 z",
+      "bbox": [
+        917.08,
+        784.33,
+        1049.66,
+        978.68
+      ],
+      "crop": [
+        855,
+        722,
+        257,
+        319
+      ],
+      "center": [
+        987.1,
+        892.9
+      ],
+      "tile": "tiles-edited/confederate-monument.webp",
+      "display_area": 17995.12
+    },
+    {
+      "id": "outfitters-yellow-arch",
+      "title": "The Outfitters yellow arch",
+      "description": "A yellow arch marks The Outfitters area, a bright visual cue in the Rolling Hills Shopping Center section.",
+      "status": "draft",
+      "needs_review": false,
+      "svg_path": "m 949.81193,1112.6344 30.69336,-24.8119 94.63181,-13.3603 37.2179,-63.7193 56.0412,-13.09168 8.326,-65.57847 -107.1449,-8.32017 3.5545,53.70966 -119.28813,4.22552 -7.55479,22.75904 -53.2783,2.6201 -11.90861,101.2763 z",
+      "bbox": [
+        881.1,
+        923.75,
+        1176.72,
+        1112.63
+      ],
+      "crop": [
+        787,
+        829,
+        484,
+        378
+      ],
+      "center": [
+        1022.3,
+        1021.1
+      ],
+      "tile": "tiles-edited/outfitters-yellow-arch.webp",
+      "display_area": 28918.06
+    },
+    {
+      "id": "small-yellow-buggy",
+      "title": "Small yellow buggy",
+      "description": "A small yellow buggy sits along the roadway, another transportation detail in the busy shopping-center area.",
+      "status": "draft",
+      "needs_review": false,
+      "svg_path": "m 1103.2689,1087.7715 69.0053,-4.7715 65.7099,-104.0861 -121.3549,44.9437 z",
+      "bbox": [
+        1103.27,
+        978.91,
+        1237.98,
+        1087.77
+      ],
+      "crop": [
+        1048,
+        923,
+        245,
+        220
+      ],
+      "center": [
+        1161.7,
+        1039.8
+      ],
+      "tile": "tiles-edited/small-yellow-buggy.webp",
+      "display_area": 7012.38
+    },
+    {
+      "id": "big-east-market-flower-road",
+      "title": "East Market Street flower-shaped road",
+      "description": "The East Market Street area is drawn with a flower-like road or interchange shape, a distinctive piece of the map's playful cartography.",
+      "status": "draft",
+      "needs_review": false,
+      "svg_path": "m 980.26888,1229.0457 41.26022,30.4007 81.1159,5.9947 46.3603,43.898 14.6946,-45.7012 22.414,-13.006 76.7788,-15.1345 -9.543,-123.5378 -11.874,-35.7536 c 0,0 -42.9951,3.9369 -63.5757,4.004 l -57.4536,13.2874 L 1078,1080.57 l -33.4007,3.4353 -44.4342,33.4007 z",
+      "bbox": [
+        980.27,
+        1076.21,
+        1262.89,
+        1309.34
+      ],
+      "crop": [
+        890,
+        986,
+        463,
+        414
+      ],
+      "center": [
+        1125.2,
+        1176.0
+      ],
+      "tile": "tiles-edited/big-east-market-flower-road.webp",
+      "display_area": 46184.63
+    },
+    {
+      "id": "wooden-bank-building",
+      "title": "Wooden bank building",
+      "description": "A wooden bank building is drawn near the cluster of financial institutions, likely a historical or stylized business reference.",
+      "status": "draft",
+      "needs_review": false,
+      "svg_path": "m 921.34969,1375.0861 173.78741,-3.8629 -11.5888,-101.051 -93.71793,-7.9074 -11.39458,-21.5741 -9.56376,-38.0679 -63.89021,6.8522 1.00253,67.9278 1.00254,51.7046 z",
+      "bbox": [
+        904.98,
+        1202.62,
+        1095.14,
+        1375.09
+      ],
+      "crop": [
+        844,
+        1142,
+        312,
+        294
+      ],
+      "center": [
+        988.1,
+        1304.3
+      ],
+      "tile": "tiles-edited/wooden-bank-building.webp",
+      "display_area": 23638.94
+    },
+    {
+      "id": "red-roof-savings-loan-bottom",
+      "title": "Rockingham Savings & Loan bottom building",
+      "description": "A red-roofed Rockingham Savings & Loan building appears in the lower banking district, near the curved roads and commercial buildings.",
+      "status": "draft",
+      "needs_review": false,
+      "svg_path": "m 807.52718,1490.2304 -15.56567,57.1756 215.67289,6.1423 109.956,-7.6344 4.9825,-110.6994 36.6854,-11.4516 3.8172,-45.0265 -87.2059,1.9086 -18.3145,21.0532 -124.05966,24.2257 z",
+      "bbox": [
+        791.96,
+        1378.74,
+        1163.08,
+        1553.55
+      ],
+      "crop": [
+        673,
+        1260,
+        609,
+        412
+      ],
+      "center": [
+        992.0,
+        1480.3
+      ],
+      "tile": "tiles-edited/red-roof-savings-loan-bottom.webp",
+      "display_area": 41509.51
+    },
+    {
+      "id": "parus-associates-copyright",
+      "title": "Parus & Associates copyright area",
+      "description": "The Parus & Associates copyright area identifies the mapmaker/publisher credit printed near the lower part of the illustration.",
+      "status": "draft",
+      "needs_review": false,
+      "svg_path": "m 784.05965,1575.5483 270.33575,0 -12.406,-23.3708 c 0,0 -260.46365,2.3251 -257.92975,-1.4921 z",
+      "bbox": [
+        781.53,
+        1550.69,
+        1054.4,
+        1575.55
+      ],
+      "crop": [
+        694,
+        1463,
+        448,
+        200
+      ],
+      "center": [
+        918.6,
+        1564.5
+      ],
+      "tile": "tiles-edited/parus-associates-copyright.webp",
+      "display_area": 5871.25
+    },
+    {
+      "id": "rockingham-national-bank-curved-building",
+      "title": "Rockingham National Bank curved building",
+      "description": "A curved Rockingham National Bank building anchors part of the lower-right commercial corridor.",
+      "status": "draft",
+      "needs_review": false,
+      "svg_path": "m 1103.4271,817.41125 86.1284,34.35499 156.0161,1.63444 39.9549,-16.16787 3.6914,-95.37518 -43.7961,-21.94902 -24.8119,-37.23376 -89.5447,-1.88861 -47.8752,18.97471 -67.4026,21.58874 z",
+      "bbox": [
+        1103.43,
+        680.79,
+        1389.22,
+        853.4
+      ],
+      "crop": [
+        1012,
+        589,
+        469,
+        356
+      ],
+      "center": [
+        1250.4,
+        772.7
+      ],
+      "tile": "tiles-edited/rockingham-national-bank-curved-building.webp",
+      "display_area": 40682.01
+    },
+    {
+      "id": "valley-national-bank",
+      "title": "Valley National Bank",
+      "description": "Valley National Bank is shown as a labeled bank building in the lower-right business district.",
+      "status": "draft",
+      "needs_review": false,
+      "svg_path": "m 1490.4762,666.46753 -19.8927,16.22318 -64.8928,27.80574 7.2801,94.32189 -12.3921,41.14775 15.2828,77.41134 45.8206,-5.61319 29.5974,-69.55163 217.5215,-41.84803 4.4237,-82.35978 -123.4532,-61.36507 -53.4887,-2.8682 z",
+      "bbox": [
+        1400.58,
+        659.77,
+        1713.22,
+        923.38
+      ],
+      "crop": [
+        1300,
+        559,
+        514,
+        465
+      ],
+      "center": [
+        1538.6,
+        769.0
+      ],
+      "tile": "tiles-edited/valley-national-bank.webp",
+      "display_area": 50502.77
+    },
+    {
+      "id": "walmart-storefront",
+      "title": "Walmart storefront",
+      "description": "A Walmart storefront appears among the lower-right retail buildings, capturing a recognizable national retailer in the local commercial landscape.",
+      "status": "draft",
+      "needs_review": false,
+      "svg_path": "m 1405.4411,694.98604 60.3709,-16.22318 14.3145,-121.0861 -79.4569,-2.86292 z",
+      "bbox": [
+        1400.67,
+        554.81,
+        1480.13,
+        694.99
+      ],
+      "crop": [
+        1345,
+        499,
+        191,
+        251
+      ],
+      "center": [
+        1437.2,
+        618.6
+      ],
+      "tile": "tiles-edited/walmart-storefront.webp",
+      "display_area": 9100.92
+    },
+    {
+      "id": "rockingham-national-bank-red-building",
+      "title": "Rockingham National Bank red building",
+      "description": "A red Rockingham National Bank building appears near the lower-right banking and retail cluster.",
+      "status": "draft",
+      "needs_review": false,
+      "svg_path": "m 1733.7153,811.68542 64.4745,23.07336 46.3427,-6.5101 38.7082,-5.5558 10.0792,-45.63661 -5.1371,-58.78739 -148.8331,7.95431 z",
+      "bbox": [
+        1733.72,
+        718.27,
+        1893.32,
+        834.76
+      ],
+      "crop": [
+        1678,
+        663,
+        271,
+        227
+      ],
+      "center": [
+        1814.8,
+        774.5
+      ],
+      "tile": "tiles-edited/rockingham-national-bank-red-building.webp",
+      "display_area": 15958.02
+    },
+    {
+      "id": "rockingham-savings-loan-upper",
+      "title": "Rockingham Savings & Loan upper building",
+      "description": "Rockingham Savings & Loan appears as an upper building in the lower-right commercial area.",
+      "status": "draft",
+      "needs_review": false,
+      "svg_path": "m 1671.2881,912.05098 13.0845,38.17221 51.6625,18.08081 -6.7855,113.5166 72.8929,6.7768 12.8198,-129.30832 43.3576,-24.33477 L 1858,832 l -196.5213,-12.64875 -54.2396,14.38516 -6.6582,45.32095 z",
+      "bbox": [
+        1600.58,
+        819.35,
+        1858.32,
+        1088.6
+      ],
+      "crop": [
+        1514,
+        733,
+        431,
+        442
+      ],
+      "center": [
+        1750.0,
+        919.7
+      ],
+      "tile": "tiles-edited/rockingham-savings-loan-upper.webp",
+      "display_area": 38324.75
+    },
+    {
+      "id": "dairy-truck",
+      "title": "Dairy truck",
+      "description": "A dairy truck is drawn near the lower-right roadway, a local delivery detail tied to the region's food and agriculture economy.",
+      "status": "draft",
+      "needs_review": false,
+      "svg_path": "m 1463.4598,920.70736 3.5647,27.55623 112.0431,58.59191 100.5914,5.1507 -2.8629,-43.65122 -8.3709,-55.34969 -106.0765,-46.13251 -79.5228,25.30471 z",
+      "bbox": [
+        1463.46,
+        866.87,
+        1679.66,
+        1012.01
+      ],
+      "crop": [
+        1394,
+        797,
+        355,
+        285
+      ],
+      "center": [
+        1578.7,
+        941.4
+      ],
+      "tile": "tiles-edited/dairy-truck.webp",
+      "display_area": 21792.72
+    },
+    {
+      "id": "hess-and-miller-sign",
+      "title": "Hess & Miller Inc. sign",
+      "description": "The Hess & Miller Inc. sign labels a business in the lower-right industrial or commercial cluster.",
+      "status": "draft",
+      "needs_review": false,
+      "svg_path": "m 1080.2145,911.97017 112.0159,13.36027 -3.3515,63.23016 35.775,-10.25132 7.1459,-45.56061 61.5412,-59.87518 -209.2179,-35.58346 z",
+      "bbox": [
+        1080.21,
+        837.29,
+        1293.34,
+        988.56
+      ],
+      "crop": [
+        1012,
+        769,
+        350,
+        288
+      ],
+      "center": [
+        1177.1,
+        895.7
+      ],
+      "tile": "tiles-edited/hess-and-miller-sign.webp",
+      "display_area": 14949.83
+    },
+    {
+      "id": "hess-and-miller-building",
+      "title": "Hess & Miller building",
+      "description": "The Hess & Miller building sits beside its sign, adding another local business landmark to the lower-right edge.",
+      "status": "draft",
+      "needs_review": false,
+      "svg_path": "m 1265.253,1104.406 182.6099,0.8629 3.8067,-71.508 1.2835,-75.55005 -56.714,-43.06319 -20.0278,-21.07332 -59.9213,1.67265 -49.8738,16.22318 -21.599,77.85234 13.4814,63.27409 z",
+      "bbox": [
+        1244.82,
+        894.07,
+        1452.95,
+        1105.27
+      ],
+      "crop": [
+        1177,
+        827,
+        343,
+        346
+      ],
+      "center": [
+        1350.1,
+        1006.3
+      ],
+      "tile": "tiles-edited/hess-and-miller-building.webp",
+      "display_area": 37895.02
+    },
+    {
+      "id": "lite-beer-truck",
+      "title": "Lite beer truck",
+      "description": "A Lite beer truck appears along the lower-right roadway, one of the map's many tiny vehicle and delivery details.",
+      "status": "draft",
+      "needs_review": false,
+      "svg_path": "m 1473.6643,1011.1073 -1.1314,60.8369 84.7562,44.6138 81.8932,7.3958 17.0005,-19.3246 -10.0914,-74.7312 -121.8947,-39.08078 z",
+      "bbox": [
+        1472.53,
+        990.82,
+        1656.18,
+        1123.95
+      ],
+      "crop": [
+        1414,
+        932,
+        301,
+        250
+      ],
+      "center": [
+        1564.8,
+        1058.9
+      ],
+      "tile": "tiles-edited/lite-beer-truck.webp",
+      "display_area": 17742.59
+    },
+    {
+      "id": "welcome-to-harrisonburg-sign",
+      "title": "Welcome to Harrisonburg sign and eagle",
+      "description": "The Welcome to Harrisonburg sign frames the lower-right entrance to the illustrated city scene, with an eagle flying beneath it.",
+      "status": "draft",
+      "needs_review": false,
+      "svg_path": "m 1270.8331,1194.2742 132.2232,-1.9086 8.543,-65.0053 -132.1775,-0.9087 z",
+      "bbox": [
+        1270.83,
+        1126.45,
+        1411.6,
+        1194.27
+      ],
+      "crop": [
+        1215,
+        1071,
+        252,
+        179
+      ],
+      "center": [
+        1340.8,
+        1160.1
+      ],
+      "tile": "tiles-edited/welcome-to-harrisonburg-sign.webp",
+      "display_area": 8775.66
+    },
+    {
+      "id": "racehorse-rider-scene",
+      "title": "Racehorse and rider scene",
+      "description": "A racehorse and rider scene appears near the bottom edge, another small action vignette in the map's outer band.",
+      "status": "draft",
+      "needs_review": false,
+      "svg_path": "m 1679.7451,1202.3708 16.5958,6.8731 -16.8048,32.6392 103.4376,4.9644 92.9402,9.736 L 1886,1094 l -211.1178,6.8629 -42.6823,30.8643 -102.8036,69.0364 25.0734,59.4934 67.4092,0.6404 z",
+      "bbox": [
+        1529.4,
+        1094.0,
+        1886.0,
+        1260.9
+      ],
+      "crop": [
+        1415,
+        980,
+        585,
+        395
+      ],
+      "center": [
+        1729.6,
+        1179.0
+      ],
+      "tile": "tiles-edited/racehorse-rider-scene.webp",
+      "display_area": 44188.93
+    },
+    {
+      "id": "city-seal-of-harrisonburg",
+      "title": "City of Harrisonburg seal",
+      "description": "The City Seal of Harrisonburg is printed as an official civic emblem in the lower-right portion of the map.",
+      "status": "draft",
+      "needs_review": false,
+      "svg_path": "m 1507.4644,1383.0644 -11.526,16.2256 19.4377,62.2126 -7.4244,43.2205 69.5211,29.4491 74.0072,-15.7522 10.0385,11.986 53.3097,8.0113 51.4758,-11.6159 9.543,-48.6961 23.1573,-124.0596 -11.0202,-41.0212 -101.7733,-58.4942 -52.4623,16.7365 -24.3954,-4.1701 -62.9842,-3.0789 -26.1827,31.492 -16.2232,53.5696 z",
+      "bbox": [
+        1495.94,
+        1254.53,
+        1799.0,
+        1538.42
+      ],
+      "crop": [
+        1399,
+        1158,
+        497,
+        477
+      ],
+      "center": [
+        1646.7,
+        1398.8
+      ],
+      "tile": "tiles-edited/city-seal-of-harrisonburg.webp",
+      "display_area": 70019.48
+    },
+    {
+      "id": "tree-trunk-speech-gag",
+      "title": "Tree-trunk speech gag",
+      "description": "A tree-trunk speech gag appears near the lower-right corner, one of the more hidden cartoon captions in the map.",
+      "status": "draft",
+      "needs_review": false,
+      "svg_path": "m 1397.4199,1465.6556 97.9543,8.406 19.0861,-328.9356 -70.2794,6.9559 -41.2737,45.9471 -89.9433,-2.7225 6.4416,62.1702 92.4483,63.0543 z",
+      "bbox": [
+        1312.96,
+        1145.13,
+        1514.46,
+        1474.06
+      ],
+      "crop": [
+        1207,
+        1040,
+        413,
+        540
+      ],
+      "center": [
+        1438.0,
+        1296.2
+      ],
+      "tile": "tiles-edited/tree-trunk-speech-gag.webp",
+      "display_area": 39078.05
+    },
+    {
+      "id": "hunter-bottom-right",
+      "title": "Hunter at lower right",
+      "description": "A hunter figure appears near the bottom-right edge, part of a small outdoor or sporting vignette.",
+      "status": "draft",
+      "needs_review": false,
+      "svg_path": "m 1358.4271,1573.5483 176.0808,-0.9543 2.7629,-20.913 3.0034,-29.9605 -73.3576,-19.8604 -34.565,-17.4541 -58.5642,-10.6802 z",
+      "bbox": [
+        1358.43,
+        1473.73,
+        1540.27,
+        1573.55
+      ],
+      "crop": [
+        1300,
+        1415,
+        299,
+        217
+      ],
+      "center": [
+        1441.9,
+        1533.3
+      ],
+      "tile": "tiles-edited/hunter-bottom-right.webp",
+      "display_area": 13383.7
+    },
+    {
+      "id": "cannon-far-right",
+      "title": "Cannon at far right",
+      "description": "A cannon is drawn near the far-right edge, adding a historical or military-reference detail to the outer scene.",
+      "status": "draft",
+      "needs_review": false,
+      "svg_path": "m 1788.4622,1506.2636 103.457,5.6344 13.9947,-140.2179 L 1818,1360 Z",
+      "bbox": [
+        1788.46,
+        1360.0,
+        1905.91,
+        1511.9
+      ],
+      "crop": [
+        1733,
+        1305,
+        228,
+        262
+      ],
+      "center": [
+        1850.4,
+        1439.2
+      ],
+      "tile": "tiles-edited/cannon-far-right.webp",
+      "display_area": 13894.49
+    },
+    {
+      "id": "ten-four-turkey-hunter-note",
+      "title": "“10-4 good buddy” turkey hunter note",
+      "description": "A small note reads like a CB-radio joke: \"10-4 good buddy... got my sights on Turkeytown!\" The nearby hunter makes the punchline easier to spot.",
+      "status": "draft",
+      "needs_review": false,
+      "svg_path": "m 1185.3497,1569.949 167.0351,5.7258 -28.6748,-92.543 -116.4113,11.4517 z",
+      "bbox": [
+        1185.35,
+        1483.13,
+        1352.38,
+        1575.67
+      ],
+      "crop": [
+        1130,
+        1428,
+        278,
+        203
+      ],
+      "center": [
+        1269.8,
+        1533.2
+      ],
+      "tile": "tiles-edited/ten-four-turkey-hunter-note.webp",
+      "display_area": 11907.89
+    },
+    {
+      "id": "joseph-neys-street-scene",
+      "title": "Joseph Neys street scene",
+      "description": "This wider downtown street scene includes the Joseph Neys building, nearby pedestrians, and a roadside gag about a large race purse.",
+      "status": "draft",
+      "needs_review": false,
+      "svg_path": "m 1502.6696,656.81384 109.9947,-18.1318 10.4973,-161.16691 91.8207,-1.43145 -45.5993,-31.96922 -112.1932,12.40596 -2.4482,75.3901 -68.2952,-11.45166 z",
+      "bbox": [
+        1486.45,
+        444.11,
+        1714.98,
+        656.81
+      ],
+      "crop": [
+        1413,
+        371,
+        375,
+        359
+      ],
+      "center": [
+        1572.1,
+        551.9
+      ],
+      "tile": "tiles-edited/joseph-neys-street-scene.webp",
+      "display_area": 21788.41
+    },
+    {
+      "id": "us-33-office-and-hunter-gag",
+      "title": "U.S. 33 office and hunter gag",
+      "description": "This cluster combines a U.S. Route 33 marker, an office-like building, and the nearby turkey-hunter joke at the edge of town.",
+      "status": "draft",
+      "needs_review": false,
+      "svg_path": "m 1159.5834,1309.4238 65.6164,172.4906 166.7728,-6.9187 6.4495,-65.1314 -58.4433,-72.7657 -52.5324,-78.2285 -104.0053,2.863 z",
+      "bbox": [
+        1159.58,
+        1258.87,
+        1398.42,
+        1481.91
+      ],
+      "crop": [
+        1083,
+        1182,
+        392,
+        376
+      ],
+      "center": [
+        1275.1,
+        1376.1
+      ],
+      "tile": "tiles-edited/us-33-office-and-hunter-gag.webp",
+      "display_area": 37241.81
+    },
+    {
+      "id": "cannon-and-hillside-barn",
+      "title": "Cannon and hillside barn",
+      "description": "A cannon sits near a hillside and red barn detail on the far-right edge of the illustration, mixing historic imagery with rural scenery.",
+      "status": "draft",
+      "needs_review": false,
+      "svg_path": "m 269.15296,563.76905 93.21656,17.28437 -3.02849,-72.26456 -67.47963,-7.19129 z",
+      "bbox": [
+        269.15,
+        501.6,
+        362.37,
+        581.05
+      ],
+      "crop": [
+        214,
+        446,
+        204,
+        191
+      ],
+      "center": [
+        321.0,
+        540.7
+      ],
+      "tile": "tiles-edited/cannon-and-hillside-barn.webp",
+      "display_area": 5521.26
+    }
+  ]
+}
