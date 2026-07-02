@@ -56,7 +56,7 @@ Do not share a Gmail password for this. Use a Google Apps Script web app deploye
 6. Deploy as a Web App, executing as you, with access set to anyone with the link.
 7. Copy the `/exec` Web App URL into `GOOGLE_SHEET_WEBHOOK_URL`.
 
-If you prefer a prompt instead of Project Settings, reload the Sheet after pasting the script, then use **Map1981 > Set webhook secret** from the Sheet menu.
+If you prefer a prompt instead of Project Settings, run `setMap1981Secret()` manually from the Apps Script editor.
 
 If running `setMap1981Secret()` from the Apps Script editor shows an unknown error, skip that function and use **Project Settings > Script Properties** instead.
 
@@ -111,6 +111,13 @@ After deployment, fill `thumbnail_url` from `tile_path`, for example by putting 
 ## Safer Editing Workflow
 
 Do not put an editable Google Sheet URL in the public app header. For easier editing, create a private AppSheet app from the same Google Sheet and require Google sign-in for the allowed editors.
+
+The Apps Script file adds a `Map1981` menu in the Google Sheet with editor launchpad items:
+
+- `Open TileData editor`
+- `Open Comments moderator`
+- `Configure AppSheet links`
+- `AppSheet setup guide`
 
 Recommended AppSheet views:
 

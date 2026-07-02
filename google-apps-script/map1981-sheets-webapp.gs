@@ -3,6 +3,8 @@ const MAP1981 = {
   commentsSheetName: "Comments",
   tileDataSheetName: "TileData",
   secretProperty: "MAP1981_WEBHOOK_SECRET",
+  appSheetTileUrlProperty: "MAP1981_APPSHEET_TILE_EDITOR_URL",
+  appSheetCommentsUrlProperty: "MAP1981_APPSHEET_COMMENTS_MODERATOR_URL",
 };
 
 const COMMENT_HEADERS = [
@@ -40,9 +42,70 @@ const TILE_DATA_HEADERS = [
 function onOpen() {
   SpreadsheetApp.getUi()
     .createMenu("Map1981")
-    .addItem("Set webhook secret", "setMap1981Secret")
-    .addItem("Set up sheets", "setupMap1981Sheets")
+    .addItem("Open TileData editor", "openTileDataEditorAppSheet")
+    .addItem("Open Comments moderator", "openCommentsModeratorAppSheet")
+    .addSeparator()
+    .addItem("Configure AppSheet links", "configureAppSheetLinks")
+    .addItem("AppSheet setup guide", "showAppSheetSetupGuide")
     .addToUi();
+}
+
+function installMap1981AppSheetLaunchpad() {
+  setupMap1981Sheets();
+  showAppSheetSetupGuide();
+}
+
+function openTileDataEditorAppSheet() {
+  openConfiguredAppSheet_(MAP1981.appSheetTileUrlProperty, "TileData editor");
+}
+
+function openCommentsModeratorAppSheet() {
+  openConfiguredAppSheet_(MAP1981.appSheetCommentsUrlProperty, "Comments moderator");
+}
+
+function configureAppSheetLinks() {
+  const ui = SpreadsheetApp.getUi();
+  const properties = PropertiesService.getScriptProperties();
+  const tileResponse = ui.prompt(
+    "TileData editor AppSheet URL",
+    "Paste the AppSheet URL for the TileData editor view.",
+    ui.ButtonSet.OK_CANCEL
+  );
+  if (tileResponse.getSelectedButton() !== ui.Button.OK) return;
+
+  const commentsResponse = ui.prompt(
+    "Comments moderator AppSheet URL",
+    "Paste the AppSheet URL for the Comments moderator view.",
+    ui.ButtonSet.OK_CANCEL
+  );
+  if (commentsResponse.getSelectedButton() !== ui.Button.OK) return;
+
+  properties.setProperty(MAP1981.appSheetTileUrlProperty, String(tileResponse.getResponseText() || "").trim());
+  properties.setProperty(MAP1981.appSheetCommentsUrlProperty, String(commentsResponse.getResponseText() || "").trim());
+  ui.alert("AppSheet links saved. Reload the spreadsheet if the menu does not update immediately.");
+}
+
+function showAppSheetSetupGuide() {
+  const spreadsheetUrl = getSpreadsheet_().getUrl();
+  const html = HtmlService.createHtmlOutput(`
+    <div style="font:14px Arial,sans-serif;line-height:1.45;padding:4px 2px 10px;color:#333">
+      <p><strong>Recommended setup:</strong> create one private AppSheet app named <em>Map1981 Editor</em> from this Google Sheet, then add two views.</p>
+      <ol>
+        <li>In Google Sheets, use <strong>Extensions &gt; AppSheet &gt; Create an app</strong>, or open AppSheet and choose this spreadsheet.</li>
+        <li>Create a <strong>TileData editor</strong> view for the <code>TileData</code> tab. Editable fields: <code>title</code>, <code>caption</code>, <code>description</code>, <code>thumbnail_url</code>, <code>status</code>, <code>needs_review</code>, <code>challenge_prompt</code>.</li>
+        <li>Create a <strong>Comments moderator</strong> view for the <code>Comments</code> tab. Editable fields: <code>moderation_status</code>, <code>moderator_notes</code>, <code>approved_at</code>, <code>approved_by</code>.</li>
+        <li>Keep IDs, tile paths, centers, submitted dates, page URLs, and user agents read-only.</li>
+        <li>Open each AppSheet view, copy its browser URL, then return here and use <strong>Map1981 &gt; Configure AppSheet links</strong>.</li>
+      </ol>
+      <p>
+        <a href="${escapeHtml_(spreadsheetUrl)}" target="_blank">Open this spreadsheet</a>
+        &nbsp;|&nbsp;
+        <a href="https://www.appsheet.com/" target="_blank">Open AppSheet</a>
+      </p>
+    </div>
+  `).setWidth(560).setHeight(420);
+
+  SpreadsheetApp.getUi().showModalDialog(html, "Map1981 AppSheet setup");
 }
 
 function setupMap1981Sheets() {
@@ -231,6 +294,35 @@ function requireSecret_(candidate) {
 
 function saveMap1981Secret_(secret) {
   PropertiesService.getScriptProperties().setProperty(MAP1981.secretProperty, secret);
+}
+
+function openConfiguredAppSheet_(propertyName, label) {
+  const url = PropertiesService.getScriptProperties().getProperty(propertyName);
+  if (!url) {
+    SpreadsheetApp.getUi().alert(`${label} link is not configured yet. Use Map1981 > AppSheet setup guide, then Map1981 > Configure AppSheet links.`);
+    return;
+  }
+
+  const safeUrl = escapeHtml_(url);
+  const safeLabel = escapeHtml_(label);
+  const html = HtmlService.createHtmlOutput(`
+    <div style="font:14px Arial,sans-serif;line-height:1.45;padding:10px;color:#333">
+      <p>Open the ${safeLabel} in AppSheet.</p>
+      <p><a href="${safeUrl}" target="_blank" style="display:inline-block;padding:10px 14px;border-radius:6px;background:#450084;color:#fff;text-decoration:none;font-weight:700">Open ${safeLabel}</a></p>
+      <p style="color:#666">If the button does not open a new tab, right-click it and choose open in a new tab.</p>
+    </div>
+  `).setWidth(380).setHeight(190);
+
+  SpreadsheetApp.getUi().showModalDialog(html, `Open ${label}`);
+}
+
+function escapeHtml_(value) {
+  return String(value || "")
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#39;");
 }
 
 function getSpreadsheet_() {
