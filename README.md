@@ -51,10 +51,14 @@ Do not share a Gmail password for this. Use a Google Apps Script web app deploye
 1. Open the Google Sheet.
 2. Go to **Extensions > Apps Script**.
 3. Paste in `google-apps-script/map1981-sheets-webapp.gs`.
-4. In `setMap1981Secret()`, replace `replace-this-with-a-long-random-secret` with the same secret you will put in Netlify.
-5. Run `setMap1981Secret()`, then run `setupMap1981Sheets()`.
+4. In Apps Script, open **Project Settings > Script Properties** and add `MAP1981_WEBHOOK_SECRET` with the same secret you will put in Netlify. Do not paste the secret into the script or README.
+5. Run `setupMap1981Sheets()`.
 6. Deploy as a Web App, executing as you, with access set to anyone with the link.
 7. Copy the `/exec` Web App URL into `GOOGLE_SHEET_WEBHOOK_URL`.
+
+If you prefer a prompt instead of Project Settings, reload the Sheet after pasting the script, then use **Map1981 > Set webhook secret** from the Sheet menu.
+
+If running `setMap1981Secret()` from the Apps Script editor shows an unknown error, skip that function and use **Project Settings > Script Properties** instead.
 
 ## Google Sheet Format
 

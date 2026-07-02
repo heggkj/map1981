@@ -37,6 +37,14 @@ const TILE_DATA_HEADERS = [
   "center_y",
 ];
 
+function onOpen() {
+  SpreadsheetApp.getUi()
+    .createMenu("Map1981")
+    .addItem("Set webhook secret", "setMap1981Secret")
+    .addItem("Set up sheets", "setupMap1981Sheets")
+    .addToUi();
+}
+
 function setupMap1981Sheets() {
   const spreadsheet = getSpreadsheet_();
   const commentsSheet = ensureSheet_(spreadsheet, MAP1981.commentsSheetName, COMMENT_HEADERS);
@@ -53,10 +61,23 @@ function setupMap1981Sheets() {
 }
 
 function setMap1981Secret() {
-  PropertiesService.getScriptProperties().setProperty(
-    MAP1981.secretProperty,
-    "replace-this-with-a-long-random-secret"
+  const ui = SpreadsheetApp.getUi();
+  const response = ui.prompt(
+    "Set Map1981 webhook secret",
+    "Paste the same secret you will store in Netlify as GOOGLE_SHEET_WEBHOOK_SECRET.",
+    ui.ButtonSet.OK_CANCEL
   );
+
+  if (response.getSelectedButton() !== ui.Button.OK) return;
+
+  const secret = String(response.getResponseText() || "").trim();
+  if (!secret || secret === "replace-this-with-a-long-random-secret") {
+    ui.alert("Secret was not saved. Paste a real shared secret.");
+    return;
+  }
+
+  saveMap1981Secret_(secret);
+  ui.alert("Map1981 webhook secret saved.");
 }
 
 function doGet(event) {
@@ -206,6 +227,10 @@ function requireSecret_(candidate) {
   if (String(candidate || "") !== expected) {
     throw new Error("Invalid secret.");
   }
+}
+
+function saveMap1981Secret_(secret) {
+  PropertiesService.getScriptProperties().setProperty(MAP1981.secretProperty, secret);
 }
 
 function getSpreadsheet_() {
