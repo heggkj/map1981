@@ -104,6 +104,17 @@ After deployment, fill `thumbnail_url` from `tile_path`, for example by putting 
 =IF(LEN(F2),"https://your-site-name.netlify.app/"&F2,"")
 ```
 
+## Safer Editing Workflow
+
+Do not put an editable Google Sheet URL in the public app header. For easier editing, create a private AppSheet app from the same Google Sheet and require Google sign-in for the allowed editors.
+
+Recommended AppSheet views:
+
+- `TileData`: show `thumbnail`, `hotspot_id`, `title`, `description`, `challenge_prompt`, `status`, and `needs_review`. Keep `hotspot_id`, `tile_path`, `center_x`, and `center_y` read-only.
+- `Comments`: show `submitted_at`, `moderation_status`, `hotspot_id`, `hotspot_title`, `commenter_name`, `comment`, `moderator_notes`, `approved_at`, and `approved_by`. Use quick filters for `pending` and `approved`.
+
+Once those editor URLs exist, keep them in a private document or behind Netlify Access/Identity rather than linking them from the public visitor page.
+
 Approved comments and memories can still be tested without Netlify by copying public submissions into `comments-approved.json` using this shape:
 
 ```json

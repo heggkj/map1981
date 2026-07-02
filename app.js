@@ -25,8 +25,9 @@ const state = {
   activeId: null,
   challengeId: null,
   zoom: 1,
-  lensZoom: 2.6,
-  lensPoint: null,
+  tileZoom: 1,
+  tileOffsetX: 0,
+  tileOffsetY: 0,
   fitWidth: 960,
   imageRatio: 2047 / 1726,
 };
@@ -36,13 +37,15 @@ const els = {
   scroll: document.querySelector("#mapScroll"),
   empty: document.querySelector("#emptyState"),
   panel: document.querySelector("#detailPanel"),
+  tileViewport: document.querySelector("#detailTileViewport"),
   tile: document.querySelector("#detailTile"),
-  tileMarker: document.querySelector("#tileMarker"),
-  lens: document.querySelector("#detailLens"),
-  closeLens: document.querySelector("#closeLens"),
+  tileZoomOut: document.querySelector("#tileZoomOut"),
+  tileZoomIn: document.querySelector("#tileZoomIn"),
+  tileReset: document.querySelector("#tileReset"),
   title: document.querySelector("#detailTitle"),
   description: document.querySelector("#detailDescription"),
   comments: document.querySelector("#approvedComments"),
+  showForm: document.querySelector("#showCommentForm"),
   form: document.querySelector("#commentForm"),
   name: document.querySelector("#commentName"),
   text: document.querySelector("#commentText"),
@@ -63,6 +66,14 @@ const panState = {
   scrollLeft: 0,
   scrollTop: 0,
   suppressClick: false,
+};
+
+const tilePanState = {
+  active: false,
+  startX: 0,
+  startY: 0,
+  offsetX: 0,
+  offsetY: 0,
 };
 
 function wordCount(value) {
@@ -153,86 +164,81 @@ function resetMapView() {
   els.scroll.scrollTo({ top: 0, left: 0, behavior: "smooth" });
 }
 
-function activeHotspot() {
-  return state.activeId ? state.hotspots.get(state.activeId) : null;
-}
-
-function tileImageRect() {
-  const rect = els.tile.getBoundingClientRect();
-  const naturalRatio = els.tile.naturalWidth && els.tile.naturalHeight ? els.tile.naturalWidth / els.tile.naturalHeight : rect.width / rect.height;
-  const boxRatio = rect.width / rect.height;
-  let width = rect.width;
-  let height = rect.height;
-  let left = rect.left;
-  let top = rect.top;
-
-  if (naturalRatio > boxRatio) {
-    height = width / naturalRatio;
-    top += (rect.height - height) / 2;
-  } else {
-    width = height * naturalRatio;
-    left += (rect.width - width) / 2;
+function clampTileOffsets() {
+  if (state.tileZoom <= 1) {
+    state.tileOffsetX = 0;
+    state.tileOffsetY = 0;
+    return;
   }
 
-  return { left, top, width, height };
+  const rect = els.tileViewport.getBoundingClientRect();
+  const maxX = (rect.width * (state.tileZoom - 1)) / 2;
+  const maxY = (rect.height * (state.tileZoom - 1)) / 2;
+  state.tileOffsetX = Math.min(maxX, Math.max(-maxX, state.tileOffsetX));
+  state.tileOffsetY = Math.min(maxY, Math.max(-maxY, state.tileOffsetY));
 }
 
-function setLensPoint(mapX, mapY, markerX = 0.5, markerY = 0.5) {
-  state.lensPoint = { mapX, mapY, markerX, markerY };
-  updateLens();
+function applyTileTransform() {
+  clampTileOffsets();
+  els.tile.style.transform = `translate(${state.tileOffsetX}px, ${state.tileOffsetY}px) scale(${state.tileZoom})`;
 }
 
-function updateLens() {
-  if (!state.lensPoint || !state.data) return;
-
-  const { mapX, mapY, markerX, markerY } = state.lensPoint;
-  const image = state.data.image;
-  els.lens.hidden = false;
-  const lensRect = els.lens.getBoundingClientRect();
-  const scaledWidth = image.width * state.lensZoom;
-  const scaledHeight = image.height * state.lensZoom;
-  const positionX = lensRect.width / 2 - mapX * state.lensZoom;
-  const positionY = lensRect.height / 2 - mapY * state.lensZoom;
-
-  els.lens.style.backgroundImage = `url("${image.source_copy}")`;
-  els.lens.style.backgroundSize = `${scaledWidth}px ${scaledHeight}px`;
-  els.lens.style.backgroundPosition = `${positionX}px ${positionY}px`;
-
-  els.tileMarker.hidden = false;
-  els.tileMarker.style.left = `${markerX * 100}%`;
-  els.tileMarker.style.top = `${markerY * 100}%`;
+function resetTileView() {
+  state.tileZoom = 1;
+  state.tileOffsetX = 0;
+  state.tileOffsetY = 0;
+  applyTileTransform();
 }
 
-function focusLensAtTilePoint(event) {
-  const hotspot = activeHotspot();
-  if (!hotspot || !els.tile.complete) return;
+function setTileZoom(nextZoom, originX = 0.5, originY = 0.5) {
+  const oldZoom = state.tileZoom;
+  const zoom = Math.min(5, Math.max(1, nextZoom));
+  if (Math.abs(zoom - oldZoom) < 0.001) return;
 
-  const imageRect = tileImageRect();
-  const shellRect = els.tile.parentElement.getBoundingClientRect();
-  const tileX = Math.min(1, Math.max(0, (event.clientX - imageRect.left) / imageRect.width));
-  const tileY = Math.min(1, Math.max(0, (event.clientY - imageRect.top) / imageRect.height));
-  const markerX = (imageRect.left - shellRect.left + imageRect.width * tileX) / shellRect.width;
-  const markerY = (imageRect.top - shellRect.top + imageRect.height * tileY) / shellRect.height;
-  const [cropX, cropY, cropW, cropH] = hotspot.crop;
-  setLensPoint(cropX + cropW * tileX, cropY + cropH * tileY, markerX, markerY);
+  const rect = els.tileViewport.getBoundingClientRect();
+  const localX = (originX - 0.5) * rect.width;
+  const localY = (originY - 0.5) * rect.height;
+  const ratio = zoom / oldZoom;
+
+  state.tileOffsetX = localX - (localX - state.tileOffsetX) * ratio;
+  state.tileOffsetY = localY - (localY - state.tileOffsetY) * ratio;
+  state.tileZoom = zoom;
+  applyTileTransform();
 }
 
-function zoomLens(event) {
-  if (!state.lensPoint) return;
+function zoomTileFromWheel(event) {
+  if (event.target.closest("button")) return;
   event.preventDefault();
+  const rect = els.tileViewport.getBoundingClientRect();
+  const originX = (event.clientX - rect.left) / rect.width;
+  const originY = (event.clientY - rect.top) / rect.height;
   const delta = normalizedWheelDelta(event);
-  state.lensZoom = Math.min(6, Math.max(1.4, state.lensZoom * Math.exp(-delta * 0.0015)));
-  updateLens();
+  setTileZoom(state.tileZoom * Math.exp(-delta * 0.0015), originX, originY);
 }
 
-function closeLens() {
-  state.lensPoint = null;
-  state.lensZoom = 2.6;
-  els.lens.hidden = true;
-  els.tileMarker.hidden = true;
-  els.lens.style.backgroundImage = "";
-  els.lens.style.backgroundSize = "";
-  els.lens.style.backgroundPosition = "";
+function beginTilePan(event) {
+  if (event.button !== 0 || event.target.closest("button") || state.tileZoom <= 1) return;
+  tilePanState.active = true;
+  tilePanState.startX = event.clientX;
+  tilePanState.startY = event.clientY;
+  tilePanState.offsetX = state.tileOffsetX;
+  tilePanState.offsetY = state.tileOffsetY;
+  els.tileViewport.classList.add("is-panning");
+  els.tileViewport.setPointerCapture?.(event.pointerId);
+}
+
+function moveTilePan(event) {
+  if (!tilePanState.active) return;
+  state.tileOffsetX = tilePanState.offsetX + event.clientX - tilePanState.startX;
+  state.tileOffsetY = tilePanState.offsetY + event.clientY - tilePanState.startY;
+  applyTileTransform();
+}
+
+function endTilePan(event) {
+  if (!tilePanState.active) return;
+  tilePanState.active = false;
+  els.tileViewport.classList.remove("is-panning");
+  els.tileViewport.releasePointerCapture?.(event.pointerId);
 }
 
 function setChallengeCollapsed(collapsed) {
@@ -279,6 +285,8 @@ function endPan(event) {
 function renderApprovedComments(hotspotId) {
   const approved = state.comments.filter((comment) => comment.hotspot_id === hotspotId && comment.status === "approved");
   els.comments.innerHTML = "";
+  els.showForm.hidden = !approved.length;
+  els.form.hidden = approved.length > 0;
 
   if (!approved.length) {
     const empty = document.createElement("p");
@@ -380,7 +388,7 @@ function focusHotspot(hotspotId) {
   els.panel.hidden = false;
   els.tile.src = hotspot.tile;
   els.tile.alt = hotspot.title;
-  closeLens();
+  resetTileView();
   els.title.textContent = hotspot.title;
   els.description.textContent = hotspot.description;
   els.status.textContent = "";
@@ -523,9 +531,21 @@ els.about.addEventListener("click", (event) => {
 });
 els.text.addEventListener("input", updateCounter);
 els.form.addEventListener("submit", submitComment);
-els.tile.addEventListener("click", focusLensAtTilePoint);
-els.closeLens.addEventListener("click", closeLens);
-els.lens.addEventListener("wheel", zoomLens, { passive: false });
+els.showForm.addEventListener("click", () => {
+  els.form.hidden = false;
+  els.showForm.hidden = true;
+  els.status.textContent = "";
+  els.text.focus();
+});
+els.tile.addEventListener("load", resetTileView);
+els.tileZoomIn.addEventListener("click", () => setTileZoom(state.tileZoom * 1.22));
+els.tileZoomOut.addEventListener("click", () => setTileZoom(state.tileZoom / 1.22));
+els.tileReset.addEventListener("click", resetTileView);
+els.tileViewport.addEventListener("wheel", zoomTileFromWheel, { passive: false });
+els.tileViewport.addEventListener("pointerdown", beginTilePan);
+els.tileViewport.addEventListener("pointermove", moveTilePan);
+els.tileViewport.addEventListener("pointerup", endTilePan);
+els.tileViewport.addEventListener("pointercancel", endTilePan);
 els.scroll.addEventListener("pointerdown", beginPan);
 els.scroll.addEventListener("pointermove", movePan);
 els.scroll.addEventListener("pointerup", endPan);
@@ -536,7 +556,7 @@ window.addEventListener("resize", () => {
   fitMapToPane();
   state.zoom = previousZoom;
   applyMapSize();
-  updateLens();
+  applyTileTransform();
 });
 els.stage.addEventListener(
   "click",
