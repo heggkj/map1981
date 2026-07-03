@@ -307,9 +307,10 @@ function endTilePan(event) {
 
 function setChallengeCollapsed(collapsed) {
   els.challenge.classList.toggle("is-collapsed", collapsed);
-  els.toggleChallenge.textContent = collapsed ? "Clue" : "Hide";
-  els.toggleChallenge.setAttribute("aria-label", collapsed ? "Show clue" : "Collapse clue");
-  els.toggleChallenge.title = collapsed ? "Show clue" : "Collapse clue";
+  els.toggleChallenge.textContent = collapsed ? "Unhide" : "Hide";
+  els.toggleChallenge.setAttribute("aria-label", collapsed ? "Unhide challenge" : "Hide challenge");
+  els.toggleChallenge.setAttribute("aria-expanded", String(!collapsed));
+  els.toggleChallenge.title = collapsed ? "Unhide challenge" : "Hide challenge";
 }
 
 function beginPan(event) {
@@ -537,6 +538,7 @@ async function submitComment(event) {
   els.submit.disabled = true;
   els.form.setAttribute("aria-busy", "true");
   els.status.textContent = "Sending...";
+  let sent = false;
   try {
     const response = await fetch(COMMENT_ENDPOINT, {
       method: "POST",
@@ -544,19 +546,26 @@ async function submitComment(event) {
       body: JSON.stringify(payload),
     });
     const result = await response.json().catch(() => ({}));
+    if (!response.ok && response.status >= 400 && response.status < 500) {
+      els.status.textContent = result.error || "Please revise the comment and try again.";
+      return;
+    }
     if (!response.ok) throw new Error("Comment endpoint unavailable");
     els.status.textContent = result.queued === false
       ? "Saved for testing. The sheet connection is not configured yet."
       : "Sent to moderation. Thank you.";
+    sent = true;
   } catch {
     localQueue({ ...payload, status: "pending_local" });
-    els.status.textContent = "Saved locally for testing. Netlify will send it to the sheet later.";
+    els.status.textContent = "The moderation queue could not be reached. This browser saved a local copy, but please try again later.";
   } finally {
     els.submit.disabled = false;
     els.form.removeAttribute("aria-busy");
   }
-  els.form.reset();
-  updateCounter();
+  if (sent) {
+    els.form.reset();
+    updateCounter();
+  }
 }
 
 async function loadApprovedComments() {

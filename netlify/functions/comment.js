@@ -13,6 +13,9 @@ const PROFANITY_PATTERNS = [
 ];
 
 const MAX_WORDS = 150;
+const MAX_COMMENT_CHARS = 1800;
+const MAX_NAME_CHARS = 80;
+const MAX_META_CHARS = 500;
 
 function json(statusCode, body) {
   return {
@@ -52,12 +55,16 @@ exports.handler = async (event) => {
   }
 
   const comment = String(payload.comment || "").trim();
-  const name = String(payload.name || "").trim().slice(0, 80);
-  const hotspotId = String(payload.hotspot_id || "").trim();
-  const hotspotTitle = String(payload.hotspot_title || "").trim();
+  const name = String(payload.name || "").trim().slice(0, MAX_NAME_CHARS);
+  const hotspotId = String(payload.hotspot_id || "").trim().slice(0, MAX_META_CHARS);
+  const hotspotTitle = String(payload.hotspot_title || "").trim().slice(0, MAX_META_CHARS);
 
   if (!hotspotId || !comment) {
     return json(400, { error: "Hotspot and comment are required." });
+  }
+
+  if (comment.length > MAX_COMMENT_CHARS) {
+    return json(400, { error: "Comment is too long." });
   }
 
   if (wordCount(comment) > MAX_WORDS) {
@@ -77,8 +84,8 @@ exports.handler = async (event) => {
     commenter_name: name,
     comment,
     word_count: wordCount(comment),
-    page_url: String(payload.page_url || ""),
-    user_agent: String(payload.user_agent || event.headers["user-agent"] || ""),
+    page_url: String(payload.page_url || "").slice(0, MAX_META_CHARS),
+    user_agent: String(payload.user_agent || event.headers["user-agent"] || "").slice(0, MAX_META_CHARS),
     moderator_notes: "",
     approved_at: "",
     approved_by: "",

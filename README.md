@@ -1,6 +1,6 @@
 # Harrisonburg/JMU 1981 Map Explorer
 
-Single-page local prototype for the edited 1981 Harrisonburg/JMU illustrated map.
+Single-page web app for exploring the edited 1981 Harrisonburg/JMU illustrated map.
 
 ## Local Preview
 
@@ -35,7 +35,7 @@ python scripts/generate_map_assets.py
 
 ## Comments & Memories Moderation
 
-The browser posts comments and memories to `/.netlify/functions/comment`. Locally, if that function is not running, clean submissions are saved in browser local storage for testing. In production, Netlify Functions proxy both comment submission and public sheet reads so Google secrets never appear in the browser.
+The browser posts comments and memories to `/.netlify/functions/comment`. Locally, if that function is not running, clean submissions are saved in browser local storage for testing. On Netlify, functions proxy both comment submission and public sheet reads so Google secrets never appear in the browser.
 
 For production on Netlify, add environment variables:
 
