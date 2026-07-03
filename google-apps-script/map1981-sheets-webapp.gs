@@ -2,9 +2,12 @@ const MAP1981 = {
   spreadsheetId: "1L7vu8ZUEM-vCEqqAlpDwuSnoeHBs-tcAOQ_fWKnwGDM",
   commentsSheetName: "Comments",
   tileDataSheetName: "TileData",
+  publicSiteUrl: "https://map1981.netlify.app/",
   secretProperty: "MAP1981_WEBHOOK_SECRET",
   appSheetTileUrlProperty: "MAP1981_APPSHEET_TILE_EDITOR_URL",
   appSheetCommentsUrlProperty: "MAP1981_APPSHEET_COMMENTS_MODERATOR_URL",
+  appSheetTileDefaultUrl: "https://www.appsheet.com/start/7c462f89-411b-4d06-b794-c8da6ca302e5?platform=desktop#view=TileData%20editor&row=lincoln-homestead-sign",
+  appSheetCommentsDefaultUrl: "https://www.appsheet.com/start/7c462f89-411b-4d06-b794-c8da6ca302e5?platform=desktop#view=Comments%20moderator",
 };
 
 const COMMENT_HEADERS = [
@@ -27,7 +30,6 @@ const COMMENT_HEADERS = [
 const TILE_DATA_HEADERS = [
   "hotspot_id",
   "title",
-  "caption",
   "description",
   "thumbnail",
   "tile_path",
@@ -45,6 +47,8 @@ function onOpen() {
     .addItem("Open TileData editor", "openTileDataEditorAppSheet")
     .addItem("Open Comments moderator", "openCommentsModeratorAppSheet")
     .addSeparator()
+    .addItem("Refresh tile thumbnails", "refreshMap1981TileThumbnails")
+    .addSeparator()
     .addItem("Configure AppSheet links", "configureAppSheetLinks")
     .addItem("AppSheet setup guide", "showAppSheetSetupGuide")
     .addToUi();
@@ -56,26 +60,28 @@ function installMap1981AppSheetLaunchpad() {
 }
 
 function openTileDataEditorAppSheet() {
-  openConfiguredAppSheet_(MAP1981.appSheetTileUrlProperty, "TileData editor");
+  const rowKey = firstRowValue_(MAP1981.tileDataSheetName, "hotspot_id", "lincoln-homestead-sign");
+  openConfiguredAppSheet_(MAP1981.appSheetTileUrlProperty, "TileData editor", MAP1981.appSheetTileDefaultUrl, "TileData editor", rowKey);
 }
 
 function openCommentsModeratorAppSheet() {
-  openConfiguredAppSheet_(MAP1981.appSheetCommentsUrlProperty, "Comments moderator");
+  const rowKey = firstRowValue_(MAP1981.commentsSheetName, "submitted_at", "");
+  openConfiguredAppSheet_(MAP1981.appSheetCommentsUrlProperty, "Comments moderator", MAP1981.appSheetCommentsDefaultUrl, "Comments moderator", rowKey);
 }
 
 function configureAppSheetLinks() {
   const ui = SpreadsheetApp.getUi();
   const properties = PropertiesService.getScriptProperties();
   const tileResponse = ui.prompt(
-    "TileData editor AppSheet URL",
-    "Paste the AppSheet URL for the TileData editor view.",
+    "TileData AppSheet URL",
+    "Paste the AppSheet app URL or the AppSheet editor URL for the TileData view.",
     ui.ButtonSet.OK_CANCEL
   );
   if (tileResponse.getSelectedButton() !== ui.Button.OK) return;
 
   const commentsResponse = ui.prompt(
     "Comments moderator AppSheet URL",
-    "Paste the AppSheet URL for the Comments moderator view.",
+    "Paste the AppSheet app URL or the AppSheet editor URL for the Comments moderator view.",
     ui.ButtonSet.OK_CANCEL
   );
   if (commentsResponse.getSelectedButton() !== ui.Button.OK) return;
@@ -92,10 +98,13 @@ function showAppSheetSetupGuide() {
       <p><strong>Recommended setup:</strong> create one private AppSheet app named <em>Map1981 Editor</em> from this Google Sheet, then add two views.</p>
       <ol>
         <li>In Google Sheets, use <strong>Extensions &gt; AppSheet &gt; Create an app</strong>, or open AppSheet and choose this spreadsheet.</li>
-        <li>Create a <strong>TileData editor</strong> view for the <code>TileData</code> tab. Editable fields: <code>title</code>, <code>caption</code>, <code>description</code>, <code>thumbnail_url</code>, <code>status</code>, <code>needs_review</code>, <code>challenge_prompt</code>.</li>
+        <li>In AppSheet, open <strong>Data &gt; Columns &gt; TileData</strong>, regenerate the structure, and confirm that <code>caption</code> is gone.</li>
+        <li>Set <code>thumbnail_url</code> to an image/thumbnail type and give it a display name like <strong>Thumbnail</strong>. Use that field in the TileData editor view. The <code>thumbnail</code> spreadsheet column is only a Google Sheets preview formula and can be hidden in AppSheet if it shows warning icons.</li>
+        <li>Create a <strong>TileData editor</strong> view for the <code>TileData</code> tab. Editable fields: <code>title</code>, <code>description</code>, <code>status</code>, <code>needs_review</code>, <code>challenge_prompt</code>. Keep <code>thumbnail_url</code> visible but read-only.</li>
+        <li>The menu opens the regular <code>TileData editor</code> table view with the first row selected. Adjust thumbnail/image size in AppSheet's column and detail/card view display settings.</li>
         <li>Create a <strong>Comments moderator</strong> view for the <code>Comments</code> tab. Editable fields: <code>moderation_status</code>, <code>moderator_notes</code>, <code>approved_at</code>, <code>approved_by</code>.</li>
         <li>Keep IDs, tile paths, centers, submitted dates, page URLs, and user agents read-only.</li>
-        <li>Open each AppSheet view, copy its browser URL, then return here and use <strong>Map1981 &gt; Configure AppSheet links</strong>.</li>
+        <li>Open each AppSheet view or editor view, copy its browser URL, then return here and use <strong>Map1981 &gt; Configure AppSheet links</strong>. Editor URLs are converted to app launch URLs automatically.</li>
       </ol>
       <p>
         <a href="${escapeHtml_(spreadsheetUrl)}" target="_blank">Open this spreadsheet</a>
@@ -111,16 +120,33 @@ function showAppSheetSetupGuide() {
 function setupMap1981Sheets() {
   const spreadsheet = getSpreadsheet_();
   const commentsSheet = ensureSheet_(spreadsheet, MAP1981.commentsSheetName, COMMENT_HEADERS);
-  const tileDataSheet = ensureSheet_(spreadsheet, MAP1981.tileDataSheetName, TILE_DATA_HEADERS);
+  const tileDataSheet = spreadsheet.getSheetByName(MAP1981.tileDataSheetName) || spreadsheet.insertSheet(MAP1981.tileDataSheetName);
+
+  removeColumnByHeader_(tileDataSheet, "caption");
+  ensureHeaders_(tileDataSheet, TILE_DATA_HEADERS);
 
   formatSheet_(commentsSheet, COMMENT_HEADERS.length);
   formatSheet_(tileDataSheet, TILE_DATA_HEADERS.length);
   setDropdown_(commentsSheet, 2, ["pending", "approved", "rejected", "needs_followup"]);
-  setDropdown_(tileDataSheet, 8, ["draft", "reviewed", "published", "hidden"]);
+  setDropdown_(tileDataSheet, TILE_DATA_HEADERS.indexOf("status") + 1, ["draft", "reviewed", "published", "hidden"]);
+  populateThumbnailUrls_(tileDataSheet);
   applyThumbnailFormulas_(tileDataSheet);
-  commentsSheet.setColumnWidth(7, 340);
-  tileDataSheet.setColumnWidth(4, 420);
-  tileDataSheet.setColumnWidth(5, 140);
+  sizeMap1981Sheets_(commentsSheet, tileDataSheet);
+}
+
+function refreshMap1981TileThumbnails() {
+  const sheet = getSpreadsheet_().getSheetByName(MAP1981.tileDataSheetName);
+  if (!sheet) {
+    SpreadsheetApp.getUi().alert("TileData sheet was not found.");
+    return;
+  }
+
+  removeColumnByHeader_(sheet, "caption");
+  ensureHeaders_(sheet, TILE_DATA_HEADERS);
+  populateThumbnailUrls_(sheet);
+  applyThumbnailFormulas_(sheet);
+  sizeMap1981Sheets_(null, sheet);
+  SpreadsheetApp.getUi().alert("Tile thumbnail URLs and preview images were refreshed.");
 }
 
 function setMap1981Secret() {
@@ -193,7 +219,6 @@ function readTileData_() {
     .map((row) => ({
       hotspot_id: row.hotspot_id,
       title: row.title,
-      caption: row.caption,
       description: row.description,
       tile_path: row.tile_path,
       thumbnail_url: row.thumbnail_url,
@@ -236,8 +261,12 @@ function rowsAsObjects_(sheet, columnCount) {
 
 function ensureSheet_(spreadsheet, name, headers) {
   const sheet = spreadsheet.getSheetByName(name) || spreadsheet.insertSheet(name);
-  sheet.getRange(1, 1, 1, headers.length).setValues([headers]);
+  ensureHeaders_(sheet, headers);
   return sheet;
+}
+
+function ensureHeaders_(sheet, headers) {
+  sheet.getRange(1, 1, 1, headers.length).setValues([headers]);
 }
 
 function formatSheet_(sheet, columnCount) {
@@ -271,6 +300,46 @@ function applyThumbnailFormulas_(sheet) {
   sheet.getRange(2, thumbnailColumn, formulas.length, 1).setFormulas(formulas);
 }
 
+function populateThumbnailUrls_(sheet) {
+  const tilePathColumn = TILE_DATA_HEADERS.indexOf("tile_path") + 1;
+  const thumbnailUrlColumn = TILE_DATA_HEADERS.indexOf("thumbnail_url") + 1;
+  const lastRow = sheet.getLastRow();
+  if (lastRow < 2) return;
+
+  const tilePaths = sheet.getRange(2, tilePathColumn, lastRow - 1, 1).getDisplayValues();
+  const thumbnailUrls = sheet.getRange(2, thumbnailUrlColumn, lastRow - 1, 1).getDisplayValues();
+  const baseUrl = MAP1981.publicSiteUrl.replace(/\/?$/, "/");
+  const values = tilePaths.map((row, index) => {
+    const currentUrl = String(thumbnailUrls[index][0] || "").trim();
+    const tilePath = String(row[0] || "").trim();
+    if (currentUrl || !tilePath) return [currentUrl];
+    return [baseUrl + tilePath.replace(/^\/+/, "")];
+  });
+
+  sheet.getRange(2, thumbnailUrlColumn, values.length, 1).setValues(values);
+}
+
+function removeColumnByHeader_(sheet, header) {
+  const lastColumn = sheet.getLastColumn();
+  if (lastColumn < 1) return;
+
+  const headers = sheet.getRange(1, 1, 1, lastColumn).getDisplayValues()[0];
+  const index = headers.findIndex((value) => String(value || "").trim() === header);
+  if (index >= 0) sheet.deleteColumn(index + 1);
+}
+
+function sizeMap1981Sheets_(commentsSheet, tileDataSheet) {
+  if (commentsSheet) commentsSheet.setColumnWidth(7, 340);
+  if (!tileDataSheet) return;
+
+  tileDataSheet.setColumnWidth(TILE_DATA_HEADERS.indexOf("description") + 1, 420);
+  tileDataSheet.setColumnWidth(TILE_DATA_HEADERS.indexOf("thumbnail") + 1, 140);
+  tileDataSheet.setColumnWidth(TILE_DATA_HEADERS.indexOf("thumbnail_url") + 1, 330);
+  if (tileDataSheet.getLastRow() > 1) {
+    tileDataSheet.setRowHeights(2, tileDataSheet.getLastRow() - 1, 84);
+  }
+}
+
 function columnLetter_(columnNumber) {
   let letter = "";
   let value = columnNumber;
@@ -296,8 +365,9 @@ function saveMap1981Secret_(secret) {
   PropertiesService.getScriptProperties().setProperty(MAP1981.secretProperty, secret);
 }
 
-function openConfiguredAppSheet_(propertyName, label) {
-  const url = PropertiesService.getScriptProperties().getProperty(propertyName);
+function openConfiguredAppSheet_(propertyName, label, defaultUrl, viewName, rowKey) {
+  const configuredUrl = PropertiesService.getScriptProperties().getProperty(propertyName);
+  const url = normalizeAppSheetLaunchUrl_(configuredUrl || defaultUrl, viewName, rowKey);
   if (!url) {
     SpreadsheetApp.getUi().alert(`${label} link is not configured yet. Use Map1981 > AppSheet setup guide, then Map1981 > Configure AppSheet links.`);
     return;
@@ -314,6 +384,32 @@ function openConfiguredAppSheet_(propertyName, label) {
   `).setWidth(380).setHeight(190);
 
   SpreadsheetApp.getUi().showModalDialog(html, `Open ${label}`);
+}
+
+function normalizeAppSheetLaunchUrl_(url, viewName, rowKey) {
+  const value = String(url || "").trim();
+  if (!value) return "";
+
+  const appIdMatch = value.match(/[?&]appId=([^&#]+)/) || value.match(/\/start\/([^/?#]+)/);
+  if (!appIdMatch) return value;
+
+  const appId = decodeURIComponent(appIdMatch[1]);
+  const hashParts = [];
+  if (viewName) hashParts.push(`view=${encodeURIComponent(viewName)}`);
+  if (rowKey) hashParts.push(`row=${encodeURIComponent(rowKey)}`);
+  const hash = hashParts.length ? `#${hashParts.join("&")}` : "";
+  return `https://www.appsheet.com/start/${encodeURIComponent(appId)}?platform=desktop${hash}`;
+}
+
+function firstRowValue_(sheetName, headerName, fallback) {
+  const sheet = getSpreadsheet_().getSheetByName(sheetName);
+  if (!sheet || sheet.getLastRow() < 2) return fallback || "";
+
+  const headers = sheet.getRange(1, 1, 1, sheet.getLastColumn()).getDisplayValues()[0];
+  const columnIndex = headers.findIndex((header) => String(header || "").trim() === headerName);
+  if (columnIndex < 0) return fallback || "";
+
+  return String(sheet.getRange(2, columnIndex + 1).getDisplayValue() || "").trim() || fallback || "";
 }
 
 function escapeHtml_(value) {

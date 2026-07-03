@@ -4,20 +4,20 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Map Explorer | Harrisonburg + JMU in 1981</title>
-    <link rel="stylesheet" href="styles.css?v=20260702b">
+    <link rel="stylesheet" href="styles.css?v=20260702g">
   </head>
   <body>
     <header class="topbar">
-      <h1>Map Explorer <span>Harrisonburg + JMU in 1981</span></h1>
+      <h1>Map Explorer: <span>Harrisonburg + JMU in 1981</span></h1>
       <nav class="top-actions" aria-label="Map tools">
         <button class="ghost-button" id="aboutButton" type="button">About</button>
       </nav>
     </header>
 
     <main class="app-shell">
-      <section class="map-pane" aria-label="Interactive illustrated map">
+      <section class="map-pane is-loading" id="mapPane" aria-label="Interactive illustrated map">
         <div class="challenge" id="challenge">
-          <strong id="challengeText">Loading...</strong>
+          <strong id="challengeText">Can you find a highlighted detail?</strong>
           <button id="newChallenge" type="button">New</button>
           <button class="challenge-toggle" id="toggleChallenge" type="button">Hide</button>
         </div>
@@ -39,6 +39,11 @@
         </div>
         <div class="map-scroll" id="mapScroll">
           <div class="map-stage" id="mapStage" aria-live="polite"></div>
+        </div>
+        <div class="map-loader" id="mapLoader" role="status" aria-live="polite">
+          <div class="map-loader-card">
+            <span class="map-loader-text">Loading image<span class="map-loader-dots" aria-hidden="true"><span>.</span><span>.</span><span>.</span></span></span>
+          </div>
         </div>
       </section>
 
@@ -77,8 +82,8 @@
 
           <section class="comments-section" aria-labelledby="commentsHeading">
             <div class="comments-head">
-              <button class="add-comment-link" id="showCommentForm" type="button" hidden>(add new)</button>
               <h3 id="commentsHeading">Comments &amp; Memories</h3>
+              <button class="add-comment-link" id="showCommentForm" type="button" hidden>(add new)</button>
             </div>
             <div class="approved-comments" id="approvedComments"></div>
 
@@ -92,8 +97,8 @@
                 <textarea id="commentText" name="comment" maxlength="1800" rows="5" required></textarea>
               </label>
               <div class="form-row">
-                <span id="wordCounter">0 / 300 words</span>
-                <button type="submit">Send</button>
+                <span id="wordCounter">0 / 150 words</span>
+                <button id="commentSubmit" type="submit">Send</button>
               </div>
               <p class="form-status" id="commentStatus" role="status"></p>
             </form>
@@ -111,6 +116,6 @@
       <p>Comments and memories are meant to improve the titles and descriptions. In production, new submissions will go through a profanity screen, then into a moderated Google Sheet before anything is published.</p>
     </dialog>
 
-    <script src="app.js" type="module"></script>
+    <script src="app.js?v=20260702g" type="module"></script>
   </body>
 </html>

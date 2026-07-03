@@ -12,7 +12,7 @@ const PROFANITY_PATTERNS = [
   /\bnigg(?:er|a)\b/i,
 ];
 
-const MAX_WORDS = 300;
+const MAX_WORDS = 150;
 
 function json(statusCode, body) {
   return {
@@ -61,7 +61,7 @@ exports.handler = async (event) => {
   }
 
   if (wordCount(comment) > MAX_WORDS) {
-    return json(400, { error: "Comment must be 300 words or fewer." });
+    return json(400, { error: `Comment must be ${MAX_WORDS} words or fewer.` });
   }
 
   if (hasProfanity(comment) || hasProfanity(name)) {

@@ -88,7 +88,6 @@ Use a tab named `TileData` with these columns in row 1:
 ```text
 hotspot_id
 title
-caption
 description
 thumbnail
 tile_path
@@ -100,13 +99,15 @@ center_x
 center_y
 ```
 
-The app uses `hotspot_id` to match rows to polygons. Edit `title`, `description`, and optional `challenge_prompt` in the sheet. Keep `tile_path` as the local tile path unless you later provide a public `thumbnail_url`. The `thumbnail` column is a formula column that displays the image from `thumbnail_url` once the tiles are hosted at a public URL. Use `status=hidden` if a polygon should not be selectable.
+The app uses `hotspot_id` to match rows to polygons. Edit `title`, `description`, and optional `challenge_prompt` in the sheet. Keep `tile_path` as the local tile path unless you later provide a custom public `thumbnail_url`. The `thumbnail` column is a formula column that displays the image from `thumbnail_url` once the tiles are hosted at a public URL. Use `status=hidden` if a polygon should not be selectable.
 
-After deployment, fill `thumbnail_url` from `tile_path`, for example by putting this in `G2` and filling down:
+After deployment, fill `thumbnail_url` from `tile_path`, for example by putting this in `F2` and filling down:
 
 ```text
-=IF(LEN(F2),"https://your-site-name.netlify.app/"&F2,"")
+=IF(LEN(E2),"https://your-site-name.netlify.app/"&E2,"")
 ```
+
+If you are using the included Apps Script menu, use **Map1981 > Refresh tile thumbnails** after deployment to fill the public URLs and thumbnail previews automatically.
 
 ## Safer Editing Workflow
 
@@ -119,9 +120,11 @@ The Apps Script file adds a `Map1981` menu in the Google Sheet with editor launc
 - `Configure AppSheet links`
 - `AppSheet setup guide`
 
+The AppSheet launch links open the regular desktop views, with the first available row selected where AppSheet has a stable key. They are not meant to force detail-only views.
+
 Recommended AppSheet views:
 
-- `TileData`: show `thumbnail`, `hotspot_id`, `title`, `description`, `challenge_prompt`, `status`, and `needs_review`. Keep `hotspot_id`, `tile_path`, `center_x`, and `center_y` read-only.
+- `TileData`: after changing Sheet columns, use AppSheet's **Data > Columns > TileData > Regenerate Structure** so stale fields like `caption` disappear. Set `thumbnail_url` to an image/thumbnail type, give it the display name `Thumbnail`, and show it with `hotspot_id`, `title`, `description`, `challenge_prompt`, `status`, and `needs_review`. Hide the spreadsheet-only `thumbnail` formula column in AppSheet if it shows warning icons. Keep `hotspot_id`, `tile_path`, `thumbnail_url`, `center_x`, and `center_y` read-only.
 - `Comments`: show `submitted_at`, `moderation_status`, `hotspot_id`, `hotspot_title`, `commenter_name`, `comment`, `moderator_notes`, `approved_at`, and `approved_by`. Use quick filters for `pending` and `approved`.
 
 Once those editor URLs exist, keep them in a private document or behind Netlify Access/Identity rather than linking them from the public visitor page.

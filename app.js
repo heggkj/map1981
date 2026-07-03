@@ -2,7 +2,7 @@ const HOTSPOTS_URL = "harrisonburg_1981_hotspots.json";
 const APPROVED_COMMENTS_URL = "comments-approved.json";
 const COMMENT_ENDPOINT = "/.netlify/functions/comment";
 const SHEET_DATA_ENDPOINT = "/.netlify/functions/sheet-data";
-const MAX_WORDS = 300;
+const MAX_WORDS = 150;
 
 const profanityPatterns = [
   /\bfuck(?:er|ing|ed)?\b/i,
@@ -33,7 +33,9 @@ const state = {
 };
 
 const els = {
+  mapPane: document.querySelector("#mapPane"),
   stage: document.querySelector("#mapStage"),
+  loader: document.querySelector("#mapLoader"),
   scroll: document.querySelector("#mapScroll"),
   empty: document.querySelector("#emptyState"),
   panel: document.querySelector("#detailPanel"),
@@ -47,6 +49,7 @@ const els = {
   comments: document.querySelector("#approvedComments"),
   showForm: document.querySelector("#showCommentForm"),
   form: document.querySelector("#commentForm"),
+  submit: document.querySelector("#commentSubmit"),
   name: document.querySelector("#commentName"),
   text: document.querySelector("#commentText"),
   counter: document.querySelector("#wordCounter"),
@@ -82,6 +85,49 @@ function wordCount(value) {
 
 function hasProfanity(value) {
   return profanityPatterns.some((pattern) => pattern.test(value));
+}
+
+function setMapLoading(loading) {
+  els.mapPane.classList.toggle("is-loading", loading);
+  els.loader.hidden = !loading;
+  els.stage.setAttribute("aria-busy", String(loading));
+}
+
+function nextPaint() {
+  return new Promise((resolve) => {
+    requestAnimationFrame(() => requestAnimationFrame(resolve));
+  });
+}
+
+async function waitForMapMedia(root) {
+  const media = [...root.querySelectorAll("img, image")];
+  const timeout = new Promise((resolve) => {
+    window.setTimeout(resolve, 5000);
+  });
+
+  const loaded = Promise.all(media.map((element) => new Promise((resolve) => {
+    if (element instanceof HTMLImageElement && element.complete) {
+      resolve();
+      return;
+    }
+
+    let settled = false;
+    const done = () => {
+      if (settled) return;
+      settled = true;
+      element.removeEventListener("load", done);
+      element.removeEventListener("error", done);
+      resolve();
+    };
+
+    element.addEventListener("load", done, { once: true });
+    element.addEventListener("error", done, { once: true });
+
+    const href = element.getAttribute("href") || element.getAttribute("xlink:href");
+    if (!href || href.startsWith("data:")) window.setTimeout(done, 140);
+  }))).then(nextPaint);
+
+  await Promise.race([loaded, timeout]);
 }
 
 function todayIndex(length) {
@@ -216,6 +262,24 @@ function zoomTileFromWheel(event) {
   setTileZoom(state.tileZoom * Math.exp(-delta * 0.0015), originX, originY);
 }
 
+function zoomTileFromDoubleClick(event) {
+  if (event.target.closest("button")) return;
+  event.preventDefault();
+
+  const rect = els.tileViewport.getBoundingClientRect();
+  const localX = event.clientX - rect.left - rect.width / 2;
+  const localY = event.clientY - rect.top - rect.height / 2;
+  const imageX = (localX - state.tileOffsetX) / state.tileZoom;
+  const imageY = (localY - state.tileOffsetY) / state.tileZoom;
+  const zoom = Math.min(5, Math.max(1, state.tileZoom * 1.55));
+  if (Math.abs(zoom - state.tileZoom) < 0.001) return;
+
+  state.tileZoom = zoom;
+  state.tileOffsetX = -imageX * zoom;
+  state.tileOffsetY = -imageY * zoom;
+  applyTileTransform();
+}
+
 function beginTilePan(event) {
   if (event.button !== 0 || event.target.closest("button") || state.tileZoom <= 1) return;
   tilePanState.active = true;
@@ -318,7 +382,7 @@ function applyTileData(rows) {
     const status = String(row.status || "").trim().toLowerCase();
     hotspot.hidden = status === "hidden";
 
-    for (const key of ["title", "caption", "description", "challenge_prompt"]) {
+    for (const key of ["title", "description", "challenge_prompt"]) {
       const value = String(row[key] || "").trim();
       if (value) hotspot[key] = value;
     }
@@ -452,7 +516,7 @@ async function submitComment(event) {
     return;
   }
   if (count > MAX_WORDS) {
-    els.status.textContent = "Please keep it at 300 words or fewer.";
+    els.status.textContent = `Please keep it at ${MAX_WORDS} words or fewer.`;
     return;
   }
   if (hasProfanity(comment) || hasProfanity(name)) {
@@ -470,6 +534,8 @@ async function submitComment(event) {
     submitted_at: new Date().toISOString(),
   };
 
+  els.submit.disabled = true;
+  els.form.setAttribute("aria-busy", "true");
   els.status.textContent = "Sending...";
   try {
     const response = await fetch(COMMENT_ENDPOINT, {
@@ -485,6 +551,9 @@ async function submitComment(event) {
   } catch {
     localQueue({ ...payload, status: "pending_local" });
     els.status.textContent = "Saved locally for testing. Netlify will send it to the sheet later.";
+  } finally {
+    els.submit.disabled = false;
+    els.form.removeAttribute("aria-busy");
   }
   els.form.reset();
   updateCounter();
@@ -501,6 +570,7 @@ async function loadApprovedComments() {
 }
 
 async function init() {
+  setMapLoading(true);
   const dataResponse = await fetch(HOTSPOTS_URL);
   state.data = await dataResponse.json();
   state.hotspots = new Map(state.data.hotspots.map((hotspot) => [hotspot.id, hotspot]));
@@ -517,6 +587,8 @@ async function init() {
   bindSvg();
   chooseChallenge(false);
   resetMapView();
+  await waitForMapMedia(els.stage);
+  setMapLoading(false);
 }
 
 document.querySelector("#zoomIn").addEventListener("click", () => setZoom(state.zoom * 1.18));
@@ -542,6 +614,7 @@ els.tileZoomIn.addEventListener("click", () => setTileZoom(state.tileZoom * 1.22
 els.tileZoomOut.addEventListener("click", () => setTileZoom(state.tileZoom / 1.22));
 els.tileReset.addEventListener("click", resetTileView);
 els.tileViewport.addEventListener("wheel", zoomTileFromWheel, { passive: false });
+els.tileViewport.addEventListener("dblclick", zoomTileFromDoubleClick);
 els.tileViewport.addEventListener("pointerdown", beginTilePan);
 els.tileViewport.addEventListener("pointermove", moveTilePan);
 els.tileViewport.addEventListener("pointerup", endTilePan);
@@ -569,6 +642,7 @@ els.stage.addEventListener(
 );
 
 init().catch((error) => {
+  setMapLoading(false);
   els.stage.textContent = "The map could not load. Try running it from a local web server.";
   console.error(error);
 });
