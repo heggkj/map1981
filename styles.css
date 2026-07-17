@@ -87,21 +87,25 @@ button {
 .exhibit-link {
   display: inline-flex;
   align-items: center;
+  border-bottom: 2px solid transparent;
   color: var(--accent);
   font-size: 12px;
   font-weight: 850;
   letter-spacing: 0.04em;
   line-height: 1;
+  padding-bottom: 0.02rem;
   text-decoration: none;
   text-transform: uppercase;
+  transition: border-color 0.15s ease;
   white-space: nowrap;
 }
 
 .exhibit-link:hover {
-  text-decoration: underline;
+  border-bottom-color: var(--gold);
 }
 
 .exhibit-link:focus-visible {
+  border-bottom-color: var(--gold);
   outline: 2px solid var(--accent);
   outline-offset: 4px;
 }
