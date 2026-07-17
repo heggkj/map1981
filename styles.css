@@ -91,6 +91,28 @@ button {
   gap: 8px;
 }
 
+.exhibit-link {
+  display: inline-flex;
+  align-items: center;
+  color: var(--accent);
+  font-size: 12px;
+  font-weight: 850;
+  letter-spacing: 0.04em;
+  line-height: 1;
+  text-decoration: none;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.exhibit-link:hover {
+  text-decoration: underline;
+}
+
+.exhibit-link:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 4px;
+}
+
 .ghost-button,
 .challenge button,
 .comment-form button {
@@ -717,6 +739,10 @@ button {
   }
 
   .ghost-button {
+    display: none;
+  }
+
+  .exhibit-link {
     display: none;
   }
 
