@@ -69,13 +69,6 @@ button {
   font-weight: 800;
 }
 
-.topbar h1 span {
-  color: var(--accent-2);
-  font-size: inherit;
-  font-weight: inherit;
-  text-transform: none;
-}
-
 .eyebrow {
   margin: 0 0 4px;
   color: var(--accent-2);
@@ -732,10 +725,6 @@ button {
   .topbar h1 {
     font-size: 17px;
     white-space: normal;
-  }
-
-  .topbar h1 span {
-    font-size: inherit;
   }
 
   .ghost-button {
